@@ -8,7 +8,8 @@
 }
 
 .homepage {
-  color: linear-gradient(45deg, #ffd700, #ff8c00, #ff4500);
+  
+  color:  #266de7;
   font-family: 'Condensed Perfect', sans-serif;
   width: 100%;
   display: flex;
@@ -24,7 +25,7 @@
   margin-bottom: 2rem;
   text-align: center;
   &:hover {
-    color: linear-gradient(101.21deg, #fdd700 1.65%, #f26a09 79.01%);
+    color:  #266de7;
     transition: color 0.3s ease;
   }
 }
@@ -77,7 +78,7 @@
       font-size: 30px;
       line-height: 1;
       opacity: 0.75;
-      color: #333;
+      color: #ffffff;
     }
 
     &.slick-disabled:before {
@@ -178,7 +179,7 @@
   font-size: 1.2rem;
   font-weight: bold;
   color: white;
-  background: linear-gradient(45deg, #ffd700, #ff8c00, #ff4500);
+  background:  #266de7;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -187,7 +188,7 @@
     transform 0.3s;
 
   &:hover {
-    background: linear-gradient(45deg, #ffd700, #ff8c00, #ff4500);
+    background:  #266de7;
     transform: scale(1.05);
   }
 }

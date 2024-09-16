@@ -4,12 +4,12 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { Button, TextField } from '@mui/material';
-import hero_img from '../../assets/hero_img.png';
+import brittany_sky_img from '../../assets/brittany-sky.jpeg';
 import './index';
 import './index.scss';
 import accountServices from '../../_services/account.service';
 import { Navigate, useNavigate } from 'react-router';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/immo-logo.jpg';
 
 type EventsSearchboxProps = {
   setListEvents: (listEvent: Event[]) => void;
@@ -136,7 +136,7 @@ function EventsSearchbox({
       </div>
       <div className="img-container">
         <div className="hero_image">
-          <img src={hero_img} alt="hero_image" className="hero_img" />
+          <img src={brittany_sky_img} alt="hero_image" className="hero_img" />
         </div>
       </div>
     </div>

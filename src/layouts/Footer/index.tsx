@@ -87,7 +87,7 @@ function Footer() {
       </Box>
 
       <Typography variant="h6" color="white" align="center">
-        {'Copyright © '}O'Clock {new Date().getFullYear()}
+        {'Copyright © '}L'immobilière de Julia - {new Date().getFullYear()}
         <Link
           variant="h6"
           href="/mentions-legales"

@@ -1,7 +1,7 @@
 import { Box, Button, Dialog } from '@mui/material';
 import { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/immo-logo.jpg';
 import './index.scss';
 import Splitter from '../../components/Splitter';
 import ConnexionForm from '../../components/ConnexionForm';
@@ -47,7 +47,7 @@ function Header() {
     <>
       <header className="header">
         <h1 className="header_title">L'immobilière de Julia</h1>
-        <div className="header_logo_oparty">
+        <div className="header_logo_immo_julia">
           <Link to="/">
             <img src={logo} alt="O'Party Logo" />
           </Link>
