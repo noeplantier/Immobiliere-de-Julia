@@ -191,8 +191,8 @@ function CreateEvent() {
         <div className="form">
           <Container maxWidth="sm">
             <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
-              <Typography variant="h4" gutterBottom>
-                Créer un Événement
+              <Typography variant="h4" fontFamily={'Times New Roman'} gutterBottom>
+                Vendez vos biens immobiliers
               </Typography>
               <TextField
                 fullWidth

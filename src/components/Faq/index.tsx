@@ -115,15 +115,16 @@ export default function CustomizedAccordions() {
     <div className="container">
       <h2 className="faq-title">Vos questions, nos réponses..</h2>
 
-      <QuestionContainer>
-        <QuestionTitle>Posez votre question à l'équipe O'Party</QuestionTitle>
+      <QuestionContainer           fontFamily={'Times New Roman'}
+>
+        <QuestionTitle fontFamily={'Times New Roman'}>Posez votre question à l'équipe O'Party</QuestionTitle>
         <Textarea
           placeholder="Écrivez votre question ici..."
           value={userQuestion}
           onChange={(e) => setUserQuestion(e.target.value)}
         />
         <Button
-          size="large" // Agrandir le bouton
+          size="large" 
           variant="contained"
           className="question-submit"
           onClick={handleQuestionSubmit}
@@ -134,9 +135,10 @@ export default function CustomizedAccordions() {
       <Splitter />
       <h2 className="faq-title">Questions les plus fréquentes</h2>
 
-      <QuestionContainer>
+      <QuestionContainer >
         <Accordion onChange={handleChange('panel1')}>
           <AccordionSummary
+            fontFamily={'Times New Roman'}
             aria-controls="panel1d-content"
             id="panel1d-header"
             color="black"

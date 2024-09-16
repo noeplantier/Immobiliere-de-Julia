@@ -1,17 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Utilisation de react-router-dom pour la navigation
+import { useNavigate } from 'react-router-dom';
 import './index.scss';
-import {
-  Box,
-  Avatar,
-  Typography,
-  Button,
-  Card,
-  CardContent,
-  TextField,
-  FormControl,
-  FormLabel,
-} from '@mui/material';
+import { Box, Avatar, Typography, Button, Card, CardContent, TextField, FormControl, FormLabel } from '@mui/material';
 import GlobalContext from '../../context/GlobalContext';
 import { Event } from '../../@types';
 import EventList from '../../components/EventList';
@@ -22,9 +12,10 @@ import ImgPicker from '../../components/ImagePicker';
 function ProfilePage() {
   const API_URL = import.meta.env.VITE_API_URL;
   const navigate = useNavigate();
-  const [user, setUser] = useState(GlobalContext);
+  const { user, setUser } = useContext(GlobalContext);
   const [listEvents, setListEvents] = useState<Event[]>([]);
   const [open, setOpen] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
 
   useEffect(() => {
     if (!sessionStorage.getItem('token')) {
@@ -33,10 +24,10 @@ function ProfilePage() {
     const fetchData = async () => {
       try {
         const headers = {
-          Authorization: `${sessionStorage.getItem('token')}`,
+          Authorization: `Bearer ${sessionStorage.getItem('token')}`,
           'Content-Type': 'application/json',
         };
-        const response = await fetch(`${API_URL}user/me`, {
+        const response = await fetch(`${API_URL}/user/me`, {
           method: 'GET',
           headers,
         });
@@ -52,25 +43,22 @@ function ProfilePage() {
     fetchData();
   }, [navigate]);
 
-  const [isEditing, setIsEditing] = useState(false);
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
-    sessionStorage.setItem('user', JSON.stringify({}));
+    sessionStorage.setItem('user', JSON.stringify({ ...user, [name]: value }));
   };
 
   const handleDelete = async () => {
     try {
       const headers = {
-        Authorization: `${sessionStorage.getItem('token')}`,
+        Authorization: `Bearer ${sessionStorage.getItem('token')}`,
         'Content-Type': 'application/json',
       };
-      const response = await fetch(`${API_URL}user/me`, {
+      await fetch(`${API_URL}/user/me`, {
         method: 'DELETE',
         headers,
       });
-      const data = await response.json();
       setUser({});
       accountServices.logout();
       navigate('/');
@@ -99,9 +87,8 @@ function ProfilePage() {
 
   const handleSaveClick = async () => {
     setIsEditing(false);
-
     const headers = {
-      Authorization: `${sessionStorage.getItem('token')}`,
+      Authorization: `Bearer ${sessionStorage.getItem('token')}`,
       'Content-Type': 'application/json',
     };
 
@@ -115,7 +102,7 @@ function ProfilePage() {
     });
 
     try {
-      const response = await fetch(`${API_URL}user/me`, {
+      const response = await fetch(`${API_URL}/user/me`, {
         method: 'PATCH',
         headers,
         body,
@@ -155,110 +142,72 @@ function ProfilePage() {
             </Typography>
           </Box>
           {!isEditing && (
-            <Button
-              variant="contained"
-              className="button-primary"
-              onClick={handleEditClick}
-            >
-              Modifier mon profil
+            <Button variant="outlined" onClick={handleEditClick}>
+              Modifier le profil
             </Button>
           )}
-          <Button
-            variant="outlined"
-            className="button-secondary"
-            onClick={handleClickOpen}
-          >
-            Supprimer mon compte
-          </Button>
-          <ConfirmDialog
-            open={open}
-            handleClose={handleClose}
-            handleConfirm={handleDelete}
-          />
+          {isEditing && (
+            <Button variant="contained" onClick={handleSaveClick}>
+              Sauvegarder
+            </Button>
+          )}
         </Box>
 
-        <CardContent className="profile-about">
-          <Typography variant="h4" gutterBottom>
-            À Propos
-          </Typography>
-          <Typography variant="h5">{user.about}</Typography>
-        </CardContent>
+        {isEditing && (
+          <CardContent>
+            <TextField
+              margin="normal"
+              label="Prénom"
+              name="first_name"
+              value={user.first_name}
+              onChange={handleChange}
+              fullWidth
+            />
+            <TextField
+              margin="normal"
+              label="Nom"
+              name="last_name"
+              value={user.last_name}
+              onChange={handleChange}
+              fullWidth
+            />
+            <TextField
+              margin="normal"
+              label="Email"
+              name="email"
+              value={user.email}
+              onChange={handleChange}
+              fullWidth
+            />
+            <TextField
+              margin="normal"
+              label="Adresse"
+              name="address"
+              value={user.address}
+              onChange={handleChange}
+              fullWidth
+            />
+            <TextField
+              margin="normal"
+              label="Ville"
+              name="city"
+              value={user.city}
+              onChange={handleChange}
+              fullWidth
+            />
+            <ImgPicker onImageChange={handleProfilePictureChange} />
+          </CardContent>
+        )}
       </Card>
 
-      {isEditing && (
-        <Card className="profile-card">
-          <CardContent>
-            <Typography variant="h5" gutterBottom>
-              Modifier le profil
-            </Typography>
+      <Box className="event-list-container">
+        <EventList events={listEvents} />
+      </Box>
 
-            <Box
-              component="form"
-              noValidate
-              autoComplete="off"
-              className="edit-form"
-            >
-              <FormControl sx={{ width: '100%' }}>
-                <FormLabel
-                  sx={{
-                    textAlign: 'left',
-                    marginLeft: '0.8rem',
-                    zIndex: 2,
-                    position: 'absolute',
-                    backgroundColor: '#ffffff',
-                    padding: '0 0.5rem',
-                    top: '-0.6rem',
-                    fontSize: '0.8rem',
-                  }}
-                >
-                  À Propos
-                </FormLabel>
-                <TextField
-                  id="filled-multiline-flexible"
-                  label="Multiline"
-                  multiline
-                  maxRows={4}
-                  value={user.about}
-                  variant="outlined"
-                  onChange={handleChange}
-                  name="about"
-                />
-              </FormControl>
-              <TextField
-                fullWidth
-                margin="normal"
-                label="Adresse Email"
-                name="email"
-                value={user.email}
-                onChange={handleChange}
-              />
-              <TextField
-                fullWidth
-                margin="normal"
-                label="Adresse"
-                name="address"
-                value={user.address}
-                onChange={handleChange}
-              />
-
-              <ImgPicker
-                url={user.profile_picture}
-                setUrl={handleProfilePictureChange}
-              />
-
-              <Button
-                variant="contained"
-                color="primary"
-                fullWidth
-                onClick={handleSaveClick}
-              >
-                Enregistrer les modifications
-              </Button>
-            </Box>
-          </CardContent>
-        </Card>
-      )}
-      <EventList events={listEvents} />
+      <Button variant="outlined" color="error" onClick={handleClickOpen}>
+        Supprimer le compte
+      </Button>
+      <ConfirmDialog open={open} onClose={handleClose} onConfirm={handleDelete} />
     </div>
   );
 }

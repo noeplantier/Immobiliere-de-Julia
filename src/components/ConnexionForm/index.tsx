@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useNavigate } from 'react-router-dom'; // Utilisation de react-router-dom pour la navigation
+import { useNavigate } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -46,7 +46,7 @@ function ConnexionForm({
   onClose,
 }: ConnexionFormProps) {
   const { user, setUser } = useContext(GlobalContext);
-  const navigate = useNavigate(); // Utilisation de useNavigate
+  const navigate = useNavigate();
 
   const login = async (email: string, password: string) => {
     const API_URL = import.meta.env.VITE_API_URL;
@@ -76,8 +76,7 @@ function ConnexionForm({
         setUser(data);
         accountServices.saveToken(token);
 
-        // Redirection vers la page de profil après la connexion
-        navigate('/profile');
+        navigate('/profile'); // Redirection vers la page de profil
       } else {
         console.error('En-tête Authorization non trouvé');
       }
@@ -118,12 +117,7 @@ function ConnexionForm({
           <Typography component="h1" variant="h5">
             Connexion
           </Typography>
-          <Box
-            component="form"
-            onSubmit={handleSubmit}
-            noValidate
-            sx={{ mt: 1 }}
-          >
+          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
             <TextField
               margin="normal"
               required
