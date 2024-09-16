@@ -318,7 +318,7 @@ function CreateEvent() {
                 color="primary"
                 sx={{ mt: 2 }}
               >
-                Créer l'événement
+                Créer une annonce 
               </Button>
             </Box>
           </Container>

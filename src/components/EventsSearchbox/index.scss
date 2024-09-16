@@ -13,6 +13,7 @@
   color: white;
   padding-top: 2rem;
   padding-bottom: 4rem;
+  margin-bottom: -5rem;
   margin-top: 2rem;
   margin-left: 5rem;
 
@@ -23,7 +24,6 @@
   width: 100%;
   height: auto;
   display: flex;
-  flex-direction: column;
   justify-content: flex-start;
   align-items: center;
 }
@@ -98,10 +98,8 @@
 }
 .hero_image {
   border: 3px solid rgba(114, 114, 114, 0.316);
-
-  width: 400vh;
+  width: 100%;
   height: auto;
-  background: linear-gradient(to top right, #fdd700 1.65%, #f26a09 79.01%);
   border-radius: 12px;
 }
 .hero_img {

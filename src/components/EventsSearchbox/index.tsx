@@ -97,9 +97,9 @@ function EventsSearchbox({
         <form className="event_searchbox" action="" onSubmit={handleSubmit}>
           <h2 className="event_searchbox_title">Nos biens immobiliers :</h2>
           <div className="event_searchbox_logo">
-            <img src={logo} alt="O'Party Logo" />
+            <img src={logo} alt="Immobilière de Julia - Logo" />
           </div>
-          <FormControl variant="standard" sx={{ m: 1, minWidth: 180 }}>
+          <FormControl color='primary' variant="standard" sx={{ m: 1, minWidth: 180 }}>
             <InputLabel id="demo-simple-select-standard-label">
               Rubriques de recherche :
             </InputLabel>
@@ -111,8 +111,7 @@ function EventsSearchbox({
               value={searchfield}
               onChange={handleChange}
               label="Quel type d'évènement recherchez-vous ?"
-              placeholder="Tapez votre recherche"
-            >
+              placeholder="Tapez votre recherche">
               <MenuItem value={availablesField.title}>Titre</MenuItem>
               <MenuItem value={availablesField.tag}>Catégorie</MenuItem>
               <MenuItem value={availablesField.city}>Ville</MenuItem>

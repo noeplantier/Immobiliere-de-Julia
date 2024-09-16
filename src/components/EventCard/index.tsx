@@ -11,7 +11,6 @@ import {
 } from '@mui/material';
 import default_event_img from '../../assets/istockphoto-672381438-170667a.jpg';
 import type { Event } from '../../@types';
-
 import './index.scss';
 import EventDetails from '../../pages/EventDetails';
 

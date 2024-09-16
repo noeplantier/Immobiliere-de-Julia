@@ -86,14 +86,15 @@ function Footer() {
         </Box>
       </Box>
 
-      <Typography variant="h6" color="white" align="center">
+      <Typography variant="h6" color="white" align="center" fontFamily={'Times New Roman'}>
         {'Copyright © '}L'immobilière de Julia - {new Date().getFullYear()}
         <Link
+          fontFamily={'Times New Roman'}
           variant="h6"
           href="/mentions-legales"
           sx={{ color: 'white', textDecoration: 'none', mx: 1 }}
         >
-          {t('Mentions légales')}
+          {('Mentions légales')}
         </Link>
       </Typography>
     </Box>

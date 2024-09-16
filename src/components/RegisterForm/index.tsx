@@ -24,12 +24,12 @@ const defaultTheme = createTheme();
 function Copyright(props) {
   return (
     <Typography
-      variant="body2"
-      color="text.secondary"
+      variant="body1"
+      color="grey"
       align="center"
       {...props}
     >
-      {'Copyright © '}O'Clock {new Date().getFullYear()} . Tous droits
+      {'Copyright © '}L'immobilière de Julia - {new Date().getFullYear()} . Tous droits
       réservés.
     </Typography>
   );
@@ -151,7 +151,7 @@ function RegisterForm({
           >
             <CloseIcon />
           </IconButton>
-          <Avatar sx={{ m: 1, bgcolor: 'orange' }}>
+          <Avatar sx={{ m: 1, bgcolor: 'skyblue' }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
@@ -266,7 +266,7 @@ function RegisterForm({
                     margin: '0 auto',
                   }}
                 >
-                  Vous avez déja un compte O'Clock ? Connectez-vous dès
+                  Vous avez déja un compte l'immobilière de Julia ? Connectez-vous dès
                   maintenant !
                 </Button>
               </Grid>

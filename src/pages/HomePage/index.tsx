@@ -174,7 +174,7 @@ function HomePage() {
           className="create-event-button"
           onClick={handleCreateEventClick}
         >
-          {'Créer un évènement'}
+          {'Créer une annonce'}
         </button>
       </div>
       <Splitter />
