@@ -41,7 +41,7 @@ function Footer() {
       sx={{
         width: '100%',
         height: '150px',
-        backgroundColor: '#00274d',
+        backgroundColor: '#266de7',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
@@ -68,17 +68,17 @@ function Footer() {
           <IconButton href="https://linkedin.com" sx={{ color: 'white' }}>
             <LinkedIn />
           </IconButton>
-          <IconButton href="https://twitter.com/oparty" sx={{ color: 'white' }}>
+          <IconButton href="https://twitter.com" sx={{ color: 'white' }}>
             <Twitter />
           </IconButton>
           <IconButton
-            href="https://facebook.com/oparty"
+            href="https://facebook.com"
             sx={{ color: 'white' }}
           >
             <Facebook />
           </IconButton>
           <IconButton
-            href="https://instagram.com/oparty"
+            href="https://instagram.com"
             sx={{ color: 'white' }}
           >
             <Instagram />

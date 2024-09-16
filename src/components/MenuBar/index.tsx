@@ -12,13 +12,10 @@ function MenuBar() {
         Contacts
       </Link>
       <Link to="/events" className="menu-link">
-        Évènements
+        Biens immobiliers
       </Link>
       <Link to="/team" className="menu-link">
-        La team O'Party
-      </Link>
-      <Link to="/partners" className="menu-link">
-        Nos Partenaires
+        Notre équipe 
       </Link>
       <Link to="/faq" className="menu-link">
         FAQ

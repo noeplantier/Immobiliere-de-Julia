@@ -13,7 +13,7 @@
 
   &-content {
     position: relative;
-    background-color: #00274d;
+    background-color: #266de7;
     background-position: fixed;
     border-radius: 10px;
     padding: 1rem;
@@ -36,7 +36,7 @@
     p {
       margin-bottom: 20px;
       font-size: 16px;
-      color: #333;
+      color: #ffffff;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -45,7 +45,7 @@
     h2 {
       margin-bottom: 20px;
       font-size: 16px;
-      color: #333;
+      color: #ffffff;
       margin: 10%;
     }
 
@@ -72,11 +72,11 @@
         cursor: pointer;
         font-size: 16px;
         color: white;
-        background: rgb(242, 113, 134);
+        background: #0d367b;
         transition: background 0.3s ease;
 
         &:hover {
-          background: rgb(242, 113, 134);
+          background: rgb(71, 70, 70);
         }
       }
     }

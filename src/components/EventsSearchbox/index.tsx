@@ -9,7 +9,7 @@ import './index';
 import './index.scss';
 import accountServices from '../../_services/account.service';
 import { Navigate, useNavigate } from 'react-router';
-import logo from '../../assets/immo-logo.jpg';
+import logo from '../../assets/immo-logo.jpeg';
 
 type EventsSearchboxProps = {
   setListEvents: (listEvent: Event[]) => void;
@@ -95,7 +95,7 @@ function EventsSearchbox({
     <div className="form-img-container">
       <div className="searchbox_bg">
         <form className="event_searchbox" action="" onSubmit={handleSubmit}>
-          <h2 className="event_searchbox_title">Trouves ton évènement :</h2>
+          <h2 className="event_searchbox_title">Nos biens immobiliers :</h2>
           <div className="event_searchbox_logo">
             <img src={logo} alt="O'Party Logo" />
           </div>

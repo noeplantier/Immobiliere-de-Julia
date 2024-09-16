@@ -1,7 +1,7 @@
 import { Box, Button, Dialog } from '@mui/material';
 import { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import logo from '../../assets/immo-logo.jpg';
+import logo from '../../assets/immo-logo.jpeg';
 import './index.scss';
 import Splitter from '../../components/Splitter';
 import ConnexionForm from '../../components/ConnexionForm';
