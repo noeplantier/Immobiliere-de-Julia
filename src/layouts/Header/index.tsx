@@ -46,7 +46,7 @@ function Header() {
   return (
     <>
       <header className="header">
-        <h1 className="header_title">O'PARTY</h1>
+        <h1 className="header_title">L'immobilière de Julia</h1>
         <div className="header_logo_oparty">
           <Link to="/">
             <img src={logo} alt="O'Party Logo" />
