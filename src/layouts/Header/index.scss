@@ -1,0 +1,112 @@
+@font-face {
+  font-family: 'Condensed Perfect';
+  src: url('/path-to-your-font/CondensedPerfect-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.header {
+  width: 100%;
+  max-height: 25vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #00274d;
+  position: relative;
+
+  .header_logo_oparty {
+    align-items: start;
+    margin-bottom: 1%;
+    max-width: 18%;
+    padding-left: 1rem;
+    background-color: transparent;
+    max-height: 100%;
+    animation: opacity 1s ease;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .header_nav {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #ffd700;
+      }
+    }
+  }
+
+  &_buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1%;
+    margin-right: 1rem;
+    gap: 1rem;
+
+    button {
+      background: linear-gradient(45deg, #ffd700, #ff8c00, #ff4500);
+      color: #ffffff;
+      animation: opacity 1s ease;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .header_title {
+    position: absolute;
+    top: 0rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Condensed Perfect', sans-serif;
+    font-size: 7rem;
+    background: linear-gradient(45deg, #ffd700, #ff8c00, #ff4500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
