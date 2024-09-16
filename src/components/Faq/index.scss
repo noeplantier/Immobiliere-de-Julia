@@ -1,0 +1,61 @@
+.container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-title {
+  font-size: 2.5rem;
+  font-family: "Times New Roman", Times, serif;  
+  text-align: center;
+  margin-top: -5rem ;
+  margin-bottom: 2rem;
+  padding-top: 10%;
+}
+
+.faq-subtitle {
+  font-family: "Times New Roman", Times, serif;  
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.MuiAccordion-root {
+  background-color: #00274d;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+
+  &:before {
+    display: none;
+  }
+}
+
+.MuiAccordionSummary-root {
+  font-family: "Times New Roman", Times, serif;  
+  font-size: 2rem;
+  background-color: #00274d;
+  color: white;
+
+  &:hover {
+    background-color: #00274d;
+  }
+
+  .MuiAccordionSummary-expandIcon {
+    color: white;
+  }
+}
+
+.MuiAccordionDetails-root {
+  font-family: "Times New Roman", Times, serif;  
+  font-size: 2rem;
+  background-color: #fff;
+  color: #000000;
+  border-top: 1px solid #f0f0f0;
+  padding: 1rem 2rem;
+  text-align: left;
+  line-height: 2;
+}
+
+.container{
+  font-family: "Times New Roman", Times, serif;  
+}

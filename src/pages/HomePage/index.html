@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>O'Party HomePage</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="homepage">
+      <!-- Cookie Popup Section -->
+      <div class="cookie-popup" data-aos="zoom-in-up">
+        <!-- Contenu du popup de cookies -->
+        <p>
+          Nous utilisons des cookies pour améliorer votre expérience sur notre
+          site.
+        </p>
+        <button>Accepter</button>
+      </div>
+
+      <!-- Hero Image and Search Box -->
+      <div class="hero-img-container">
+        <div class="event-search">
+          <input type="text" placeholder="Recherchez des événements..." />
+          <button>Rechercher</button>
+        </div>
+      </div>
+
+      <!-- Create Event Button -->
+      <div>
+        <button class="create-event-button">Créer un évènement</button>
+      </div>
+
+      <!-- Splitter -->
+      <div class="splitter"></div>
+
+      <!-- Event List Title -->
+      <h2 class="eventList_title" data-aos="zoom-in-up">
+        Les évènements autour de moi
+      </h2>
+
+      <!-- Event List Slider -->
+      <div class="event-list visible" data-aos="zoom-in">
+        <!-- Slider with Static Event Data -->
+        <div class="slider">
+          <div class="slick-slide">Évènement 1</div>
+          <div class="slick-slide">Évènement 2</div>
+          <div class="slick-slide">Évènement 3</div>
+        </div>
+      </div>
+
+      <!-- Splitter -->
+      <div class="splitter"></div>
+
+      <!-- Discover O'Party Events Title -->
+      <h2 class="eventList_title" data-aos="zoom-in-up">
+        Venez découvrir nos soirées O'Party
+      </h2>
+
+      <!-- Image Carousel -->
+      <div class="img-container" data-aos="zoom-in">
+        <div
+          class="carousel-image active"
+          style="
+            background-image: url('src/assets/istockphoto-1279483477-612x612.jpg');
+          "
+        ></div>
+        <div
+          class="carousel-image"
+          style="
+            background-image: url('src/assets/istockphoto-1182630044-170667a.jpg');
+          "
+        ></div>
+        <div
+          class="carousel-image"
+          style="
+            background-image: url('src/assets/istockphoto-1133362469-612x612.jpg');
+          "
+        ></div>
+      </div>
+
+      <!-- Splitter -->
+      <div class="splitter"></div>
+
+      <!-- FAQ Section -->
+      <div class="faq" data-aos="zoom-in">
+        <h3>FAQ</h3>
+        <p>Questions fréquentes sur nos événements.</p>
+      </div>
+    </div>
+
+    <!-- AOS Script for Animations -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1200,
+        once: true,
+        mirror: false,
+      });
+    </script>
+  </body>
+</html>

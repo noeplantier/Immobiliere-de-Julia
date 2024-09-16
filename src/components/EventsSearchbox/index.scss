@@ -1,0 +1,144 @@
+@use '../../styles/variables' as v;
+
+.event_searchbox {
+  width: 50vh;
+  height: auto;
+  border: 1px solid rgba(114, 114, 114, 0.316);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #266de7;
+  color: white;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  margin-bottom: -5rem;
+  margin-top: 2rem;
+  margin-left: 5rem;
+
+  z-index: 1;
+  animation: fromLeftToRight 1s ease-in-out;
+}
+.event_searchbox_form {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.event_searchbox_title {
+  font-size: 1.8rem;
+  font-family: "Times New Roman", Times, serif;  
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.event_searchbox_logo {
+  align-items: start;
+  max-width: 80%;
+  background-color: transparent;
+  max-height: auto;
+  animation: opacity 1s ease;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.form-img-container {
+  width: 200vh;
+  height: 100vh;
+  display: flex;
+  position: relative;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
+
+.searchbox_bg {
+  margin-top: 5%;
+  margin-right: -15%;
+  width: 40%;
+  height: 80%;
+  backdrop-filter: blur(2px);
+  border-radius: 12px;
+  padding-top: 0.3rem;
+  padding-left: 0.2rem;
+  z-index: 1;
+  top: 10%;
+  animation: fromLeftToRight 1s ease-in-out;
+}
+
+.img-container {
+  margin-right: 10%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  animation: fromrightToleft 0.6s ease-in-out;
+}
+.hero_image {
+  border: 3px solid rgba(114, 114, 114, 0.316);
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+.hero_img {
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+}
+@keyframes fromLeftToRight {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fromrightToleft {
+  0% {
+    transform: translateX(1080px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .event_searchbox_form {
+    height: fit-content;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}

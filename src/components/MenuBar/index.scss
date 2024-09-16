@@ -1,0 +1,27 @@
+.menu-bar {
+  background: rgb(71, 70, 70);
+  justify-content: space-around;
+
+  padding-top: 1.1rem;
+  padding-bottom: 0.9rem;
+}
+
+.menu-link {
+  justify-content: space-between;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin: 0 1rem;
+  font-family: "Times New Roman", Times, serif;  
+
+  font-size: 1.4rem;
+  font-weight: bold;
+  position: relative;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+
+  &:hover {
+    color:#266de7;
+    ;
+  }
+}
