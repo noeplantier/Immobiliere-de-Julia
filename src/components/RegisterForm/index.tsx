@@ -215,6 +215,16 @@ function RegisterForm({
                 <TextField
                   required
                   fullWidth
+                  id="phone"
+                  label="Numéro de téléphone"
+                  name="phone"
+                  autoComplete="phone"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
                   name="password"
                   label="Mot de passe"
                   type="password"

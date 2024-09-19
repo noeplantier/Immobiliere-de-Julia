@@ -52,7 +52,6 @@ const generateRandomUser = (id: number) => {
     return descriptions[Math.floor(Math.random() * descriptions.length)];
   };
 
-  // Replace this with a better service or a collection of avatar images
   const avatarUrls = [
     'https://randomuser.me/api/portraits/men/1.jpg',
     'https://randomuser.me/api/portraits/women/2.jpg',

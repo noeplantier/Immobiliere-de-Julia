@@ -24,7 +24,7 @@ function Copyright(props: any) {
       align="center"
       {...props}
     >
-      {'Copyright © '}O &apos; Clock {new Date().getFullYear()}. Tous droits
+      {'Copyright © '}L'Immobilière de Julia {new Date().getFullYear()}. Tous droits
       réservés.
     </Typography>
   );
@@ -154,7 +154,7 @@ function ConnexionForm({
                     setIsRegisterModalOpen(true);
                   }}
                 >
-                  {"Vous n'avez pas de compte? Inscrivez-vous"}
+                  {"Vous n'avez pas de compte l'Immobilière de Julia ? Inscrivez-vous"}
                 </Button>
               </Grid>
             </Grid>
