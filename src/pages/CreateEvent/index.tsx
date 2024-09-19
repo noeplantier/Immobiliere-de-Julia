@@ -22,14 +22,15 @@ function CreateEvent() {
   const API_URL = import.meta.env.VITE_API_URL;
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
-  const [startTime, setStartTime] = useState('');
   const [startDate, setStartDate] = useState('');
-  const [endDate, setEndDate] = useState('');
+  const [price, setPrice] = useState('');
+  const [propertyType, setPropertyType] = useState('');
+  const [area, setArea] = useState('');
+  const [rooms, setRooms] = useState('');
+  const [floor, setFloor] = useState('');
   const [address, setAddress] = useState('');
-  const [confidentiality, setConfidentiality] = useState(false);
   const [status, setStatus] = useState(false);
   const [image, setImage] = useState('');
-  const [maxParticipants, setMaxParticipants] = useState('');
   const [accessibilityPMR, setAccessibilityPMR] = useState(false);
   const [city, setCity] = useState('');
   const [citySuggestions, setCitySuggestions] = useState([]);
@@ -154,6 +155,7 @@ function CreateEvent() {
       address,
       //TODO : utiliser les coordonnées à jour dans le state
       location: coordsArray.map((coord) => parseFloat(coord)),
+      price: Number(price),
       privacy_type: confidentiality,
       picture: image,
       max_attendee: Number(maxParticipants),
@@ -212,7 +214,49 @@ function CreateEvent() {
                 onChange={(e) => setDescription(e.target.value)}
                 required
               />
-          
+               <TextField
+                fullWidth
+                margin="normal"
+                label="Prix (€)"
+                type="number"
+                value={price}
+                onChange={(e) => setPrice(e.target.value)}
+                required
+              />
+                  <FormControl fullWidth margin="normal">
+                <InputLabel>Type de bien</InputLabel>
+                <Select value={propertyType} onChange={(e) => setPropertyType(e.target.value)}>
+                  <MenuItem value="Appartement">Appartement</MenuItem>
+                  <MenuItem value="Maison">Maison</MenuItem>
+                  <MenuItem value="Terrain">Terrain</MenuItem>
+                </Select>
+              </FormControl>
+              <TextField
+                fullWidth
+                margin="normal"
+                label="Surface (m²)"
+                type="number"
+                value={area}
+                onChange={(e) => setArea(e.target.value)}
+                required
+              />
+              <TextField
+                fullWidth
+                margin="normal"
+                label="Nombre de pièces"
+                type="number"
+                value={rooms}
+                onChange={(e) => setRooms(e.target.value)}
+                required
+              />
+              <TextField
+                fullWidth
+                margin="normal"
+                label="Étage(s)"
+                type="number"
+                value={floor}
+                onChange={(e) => setFloor(e.target.value)}
+              />
               <TextField
                 fullWidth
                 margin="normal"
@@ -265,21 +309,12 @@ function CreateEvent() {
               </FormControl>
               <ImgPicker url={image} setUrl={setImage} />
        
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={accessibilityPMR}
-                    onChange={(e) => setAccessibilityPMR(e.target.checked)}
-                  />
-                }
-                label="Accessibilité PMR"
-                sx={{ mb: 12 }}
-              />
+            
               <Button
                 type="submit"
                 variant="contained"
                 color="primary"
-                sx={{ mt: 7, mr: 20}}
+                sx={{ mt: 7, mb:4}}
               >
                 Créer une annonce 
               </Button>

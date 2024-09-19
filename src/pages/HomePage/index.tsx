@@ -14,6 +14,7 @@ import CookiePopup from '../../components/CookiePopup/CookiePopup';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './index.scss';
+import CreateEvent from '../CreateEvent';
 
 function HomePage() {
   const { t } = useTranslation(); // Hook pour la traduction
@@ -219,7 +220,6 @@ function HomePage() {
       )}
 
       <Splitter />
-
       <Faq data-aos="zoom-in" />
     </div>
   );
