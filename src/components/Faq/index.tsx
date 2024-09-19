@@ -129,7 +129,7 @@ export default function CustomizedAccordions() {
           className="question-submit"
           onClick={handleQuestionSubmit}
         >
-          Cliquez ici pour soumettre votre question
+          Cliquez ici 
         </Button>
       </QuestionContainer>
       <Splitter />

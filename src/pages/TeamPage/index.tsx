@@ -45,7 +45,7 @@ const teamMembers = [
 const TeamPage = () => {
   return (
     <div className="team-page">
-      <h2 className="teampage-title">Notre Équipe</h2>
+      <h2 className="teampage-title">Notre équipe</h2>
       <ul className="team-list">
         {teamMembers.map((member) => (
           <li key={member.name} className="team-member">

@@ -22,14 +22,15 @@ function CreateEvent() {
   const API_URL = import.meta.env.VITE_API_URL;
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
-  const [startTime, setStartTime] = useState('');
   const [startDate, setStartDate] = useState('');
-  const [endDate, setEndDate] = useState('');
+  const [price, setPrice] = useState('');
+  const [propertyType, setPropertyType] = useState('');
+  const [area, setArea] = useState('');
+  const [rooms, setRooms] = useState('');
+  const [floor, setFloor] = useState('');
   const [address, setAddress] = useState('');
-  const [confidentiality, setConfidentiality] = useState(false);
   const [status, setStatus] = useState(false);
   const [image, setImage] = useState('');
-  const [maxParticipants, setMaxParticipants] = useState('');
   const [accessibilityPMR, setAccessibilityPMR] = useState(false);
   const [city, setCity] = useState('');
   const [citySuggestions, setCitySuggestions] = useState([]);
@@ -154,6 +155,7 @@ function CreateEvent() {
       address,
       //TODO : utiliser les coordonnées à jour dans le state
       location: coordsArray.map((coord) => parseFloat(coord)),
+      price: Number(price),
       privacy_type: confidentiality,
       picture: image,
       max_attendee: Number(maxParticipants),
@@ -190,7 +192,7 @@ function CreateEvent() {
       <div className="background_bg">
         <div className="form">
           <Container maxWidth="sm">
-            <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
+            <Box component="form" onSubmit={handleSubmit} sx={{ mt: 3, mb: 4, pt: 4 }}>
               <Typography variant="h4" fontFamily={'Times New Roman'} gutterBottom>
                 Vendez vos biens immobiliers
               </Typography>
@@ -212,22 +214,53 @@ function CreateEvent() {
                 onChange={(e) => setDescription(e.target.value)}
                 required
               />
+               <TextField
+                fullWidth
+                margin="normal"
+                label="Prix (€)"
+                type="number"
+                value={price}
+                onChange={(e) => setPrice(e.target.value)}
+                required
+              />
+                  <FormControl fullWidth margin="normal">
+                <InputLabel>Type de bien</InputLabel>
+                <Select value={propertyType} onChange={(e) => setPropertyType(e.target.value)}>
+                  <MenuItem value="Appartement">Appartement</MenuItem>
+                  <MenuItem value="Maison">Maison</MenuItem>
+                  <MenuItem value="Terrain">Terrain</MenuItem>
+                </Select>
+              </FormControl>
               <TextField
                 fullWidth
                 margin="normal"
-                label="Heure de début"
-                type="time"
-                value={startTime}
-                onChange={(e) => setStartTime(e.target.value)}
-                InputLabelProps={{
-                  shrink: true,
-                }}
+                label="Surface (m²)"
+                type="number"
+                value={area}
+                onChange={(e) => setArea(e.target.value)}
                 required
               />
               <TextField
                 fullWidth
                 margin="normal"
-                label="Date de début"
+                label="Nombre de pièces"
+                type="number"
+                value={rooms}
+                onChange={(e) => setRooms(e.target.value)}
+                required
+              />
+              <TextField
+                fullWidth
+                margin="normal"
+                label="Étage(s)"
+                type="number"
+                value={floor}
+                onChange={(e) => setFloor(e.target.value)}
+              />
+              <TextField
+                fullWidth
+                margin="normal"
+                label="Date de mise en vente"
                 type="date"
                 value={startDate}
                 onChange={(e) => setStartDate(e.target.value)}
@@ -236,18 +269,7 @@ function CreateEvent() {
                 }}
                 required
               />
-              <TextField
-                fullWidth
-                margin="normal"
-                label="Date de fin"
-                type="date"
-                value={endDate}
-                onChange={(e) => setEndDate(e.target.value)}
-                InputLabelProps={{
-                  shrink: true,
-                }}
-                required
-              />
+          
               <TextField
                 fullWidth
                 margin="normal"
@@ -273,50 +295,26 @@ function CreateEvent() {
                   <TextField {...params} label="Ville" margin="normal" />
                 )}
               />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={confidentiality}
-                    onChange={(e) => setConfidentiality(e.target.checked)}
-                  />
-                }
-                label="Confidentialité"
-              />
+            
               <FormControl fullWidth margin="normal">
                 <InputLabel>Statut</InputLabel>
                 <Select value={1} required>
                   <MenuItem onSelect={(e) => handleStatusChange(e)} value={1}>
-                    En cours
+                    À Vendre
                   </MenuItem>
                   <MenuItem onSelect={(e) => handleStatusChange(e)} value={0}>
-                    Terminé
+                    Vendu
                   </MenuItem>
                 </Select>
               </FormControl>
               <ImgPicker url={image} setUrl={setImage} />
-              <TextField
-                fullWidth
-                margin="normal"
-                label="Nombre max de participants"
-                type="number"
-                value={maxParticipants}
-                onChange={(e) => setMaxParticipants(e.target.value)}
-                required
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={accessibilityPMR}
-                    onChange={(e) => setAccessibilityPMR(e.target.checked)}
-                  />
-                }
-                label="Accessibilité PMR"
-              />
+       
+            
               <Button
                 type="submit"
                 variant="contained"
                 color="primary"
-                sx={{ mt: 2 }}
+                sx={{ mt: 7, mb:4}}
               >
                 Créer une annonce 
               </Button>
