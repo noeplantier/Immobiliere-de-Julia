@@ -181,7 +181,7 @@ function HomePage() {
       <Splitter />
 
       <h2 className="eventList_title" data-aos="zoom-in-up">
-        {'Les biens autour de moi'}
+        {'Nos biens immobiliers'}
       </h2>
       <div
         ref={eventListRef}
