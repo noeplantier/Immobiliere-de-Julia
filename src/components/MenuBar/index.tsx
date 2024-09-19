@@ -15,17 +15,11 @@ function MenuBar() {
       <Link to="/team" className="menu-link">
         Notre équipe 
       </Link>
-      <Link to="/sell" className="menu-link">
-        Vendre
-      </Link>
       <Link to="/buy" className="menu-link">
         Acheter
       </Link>
       <Link to="/rent" className="menu-link">
         Louer
-      </Link>
-      <Link to="/manage" className="menu-link">
-        Faire gérer
       </Link>
     </nav>
   );

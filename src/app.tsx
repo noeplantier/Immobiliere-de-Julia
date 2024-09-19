@@ -19,9 +19,7 @@ import EventList from './components/EventList';
 import MenuBar from './components/MenuBar';
 import RegisterForm from './components/RegisterForm';
 import ConnexionForm from './components/ConnexionForm';
-import FaireGerer from './pages/GestionPage';
 import Acheter from './pages/BuyPage';
-import SellPage from './pages/SellPage';
 import Louer from './pages/RentPage';
 
 function App() {
@@ -49,10 +47,9 @@ function App() {
               <Route path="/faq" element={<Faq />} />
               <Route path="/event/:id" element={<EventDetails />} />
               <Route path="/mentions-legales" element={<LegalNotices />} />
-              <Route path="/sell" element={<SellPage />} />
               <Route path="/buy" element={<Acheter />} />
               <Route path="/rent" element={<Louer />} />
-              <Route path="/manage" element={<FaireGerer />} />
+              
 
 
 
