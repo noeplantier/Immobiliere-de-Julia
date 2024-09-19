@@ -30,11 +30,11 @@ function HomePage() {
   const [zoomedImage, setZoomedImage] = useState<string | null>(null);
 
   const images = [
-    'src/assets/istockphoto-1279483477-612x612.jpg',
-    'src/assets/istockphoto-1182630044-170667a.jpg',
-    'src/assets/istockphoto-1133362469-612x612.jpg',
-    'src/assets/istockphoto-672381438-170667a.jpg',
-    'src/assets/istockphoto-497317250-612x612.jpg',
+    'src/assets/Le-moulin-a-maree-du-Birlot.jpg',
+    'src/assets/vue-de-la-ville-historique-dinan-avec-rivière-rance-département-cotes-d-armor-bretagne-france-du-nord-ouest-139921599.jpg.webp',
+    'src/assets/phare.jpg',
+    'src/assets/village-breton.jpg',
+    'src/assets/instinct-voyageurs-road-trip-en-bretagne-720x480.jpg',
   ];
 
   const navigate = useNavigate();
@@ -175,13 +175,13 @@ function HomePage() {
           className="create-event-button"
           onClick={handleCreateEventClick}
         >
-          {'Créer une annonce'}
+          {'Faites estimer votre bien'}
         </button>
       </div>
       <Splitter />
 
       <h2 className="eventList_title" data-aos="zoom-in-up">
-        {'Les évènements autour de moi'}
+        {'Les biens autour de moi'}
       </h2>
       <div
         ref={eventListRef}
@@ -200,7 +200,7 @@ function HomePage() {
       <Splitter />
 
       <h2 className="eventList_title" data-aos="zoom-in-up">
-        {'Découvre nos évènements'}
+        {'Découvrez notre patrimoine'}
       </h2>
       <div className="img-container" data-aos="zoom-in">
         {images.map((image, index) => (

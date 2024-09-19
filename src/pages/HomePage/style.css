@@ -6,7 +6,6 @@
 }
 
 .homepage {
-  color: linear-gradient(45deg, #ffd700, #ff8c00, #ff4500);
   font-family: 'Condensed Perfect', sans-serif;
   width: 100%;
   display: flex;
@@ -82,7 +81,6 @@
   font-size: 1.2rem;
   font-weight: bold;
   color: white;
-  background: linear-gradient(45deg, #ffd700, #ff8c00, #ff4500);
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -92,6 +90,5 @@
 }
 
 .create-event-button:hover {
-  background: linear-gradient(45deg, #ffd700, #ff8c00, #ff4500);
   transform: scale(1.05);
 }

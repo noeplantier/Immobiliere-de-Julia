@@ -40,14 +40,17 @@ const AccordionSummary = styled((props: AccordionSummaryProps) => (
   },
   '& .MuiAccordionSummary-content': {
     marginLeft: theme.spacing(2),
-    fontSize: '1.25rem', // Agrandir le texte des titres d'accordéon
+    fontSize: '1.25rem', 
+    fontFamily:'Times New Roman',
+
   },
 }));
 
 const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   padding: theme.spacing(2),
   borderTop: '1px solid rgba(0, 0, 0, .125)',
-  fontSize: '1.1rem', // Agrandir le texte des détails
+  fontSize: '1.1rem', 
+  fontFamily:'Times New Roman',
 }));
 
 const QuestionContainer = styled('div')({
@@ -67,9 +70,11 @@ const TeamQuestionContainer = styled('div')({
 });
 
 const QuestionTitle = styled(Typography)({
-  fontSize: '1.75rem', // Agrandir le texte du titre
+  fontSize: '1.75rem', 
   marginBottom: '1rem',
   fontWeight: 'bold',
+  fontFamily:'Times New Roman',
+
 });
 
 const Textarea = styled('textarea')({
@@ -117,7 +122,7 @@ export default function CustomizedAccordions() {
 
       <QuestionContainer           fontFamily={'Times New Roman'}
 >
-        <QuestionTitle fontFamily={'Times New Roman'}>Posez votre question à l'équipe O'Party</QuestionTitle>
+        <QuestionTitle fontFamily={'Times New Roman'}>Posez votre question juste ici</QuestionTitle>
         <Textarea
           placeholder="Écrivez votre question ici..."
           value={userQuestion}
@@ -143,16 +148,18 @@ export default function CustomizedAccordions() {
             id="panel1d-header"
             color="black"
           >
-            <Typography>Qu’est-ce que O’Party ?</Typography>
+            <Typography> Quels sont les avantages d'acheter un bien immobilier en Bretagne ? </Typography>
           </AccordionSummary>
 
           <AccordionDetails>
             <Typography sx={{ textAlign: 'left' }}>
-              O’Party est une application qui permet aux utilisateurs de
-              participer à des soirées organisées par des hôtes et de rencontrer
-              des gens partout en France. Que vous soyez à la recherche de
-              nouvelles amitiés, de réseautage ou simplement amateurs de bons
-              moments, O’Party vous connecte avec des événements locaux.
+            La Bretagne offre une qualité de vie exceptionnelle 
+            avec ses paysages côtiers magnifiques, son patrimoine historique 
+            riche et une proximité avec la mer. De plus, le marché immobilier
+             reste relativement abordable par rapport à d'autres régions, avec 
+             une variété de biens allant des maisons traditionnelles bretonnes 
+             aux appartements modernes. C'est un excellent choix pour les familles,
+              les investisseurs ou les amateurs de nature.
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -162,13 +169,11 @@ export default function CustomizedAccordions() {
             id="panel1d-header"
             color="black"
           >
-            <Typography>Comment puis-je participer à une soirée ?</Typography>
+            <Typography> Quelles sont les étapes pour vendre un bien avec L'immobilière de Julia ?</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography sx={{ textAlign: 'left' }}>
-              Vous pouvez participer à une soirée en vous inscrivant via
-              l'application. Recherchez une soirée qui vous intéresse, puis
-              cliquez sur le bouton d'inscription.
+            Pour vendre un bien avec nous, il suffit de nous contacter pour une estimation gratuite. Ensuite, nous nous occupons de toutes les démarches : mise en valeur du bien, publication des annonces, organisation des visites, négociation et gestion administrative jusqu'à la signature de l'acte de vente. Notre équipe s'assure que votre bien bénéficie de la meilleure visibilité et des meilleurs conseils pour une vente rapide et au juste prix.
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -178,13 +183,11 @@ export default function CustomizedAccordions() {
             id="panel1d-header"
             color="black"
           >
-            <Typography>Comment puis-je organiser une soirée ?</Typography>
+            <Typography> Proposez-vous des services pour les investisseurs immobiliers en Bretagne ?</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography sx={{ textAlign: 'left' }}>
-              Pour organiser une soirée, créez un compte hôte sur O'Party, puis
-              utilisez l'option 'Organiser une soirée' pour renseigner les
-              détails de votre événement
+            Oui, L'immobilière de Julia propose un accompagnement sur mesure pour les investisseurs. Nous offrons une expertise locale pour vous aider à identifier les opportunités rentables, qu'il s'agisse de résidences secondaires, d'investissements locatifs ou de projets de rénovation. Nous vous aidons à maximiser la valeur de votre investissement en tenant compte des spécificités du marché breton.
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -194,13 +197,11 @@ export default function CustomizedAccordions() {
             id="panel1d-header"
             color="black"
           >
-            <Typography>Est-ce que O'Party est gratuit ?</Typography>
+            <Typography>Quels types de biens proposez-vous à la vente ?</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography sx={{ textAlign: 'left' }}>
-              L'inscription et la création de compte sur O'Party sont gratuites.
-              Cependant, certaines soirées peuvent avoir des frais de
-              participation déterminés par l'hôte.
+            Nous proposons une large gamme de biens immobiliers en Bretagne, allant des maisons de campagne, des propriétés en bord de mer, aux appartements en centre-ville. Que vous cherchiez une résidence principale, une maison de vacances ou un bien pour investissement locatif, nous avons des options pour tous les budgets et styles de vie.
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -211,14 +212,12 @@ export default function CustomizedAccordions() {
             color="black"
           >
             <Typography>
-              Comment garantir la sécurité lors des soirées ?
+            Comment puis-je organiser une visite d'un bien que j'ai vu sur votre site ?
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography sx={{ textAlign: 'left' }}>
-              O'Party met en œuvre plusieurs mesures de sécurité, y compris la
-              vérification des profils des utilisateurs et des hôtes, ainsi que
-              des options de signalement en cas de comportement inapproprié.
+            Vous pouvez facilement organiser une visite en nous contactant directement via le formulaire en ligne, par téléphone ou par e-mail. Notre équipe se chargera de vous proposer des créneaux qui correspondent à votre emploi du temps et vous fournira toutes les informations nécessaires pour une visite personnalisée et sans engagement.
             </Typography>
           </AccordionDetails>
         </Accordion>
