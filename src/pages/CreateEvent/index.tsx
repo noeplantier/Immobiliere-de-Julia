@@ -17,6 +17,7 @@ import GlobalContext from '../../context/GlobalContext';
 import ImgPicker from '../../components/ImagePicker';
 import './index.scss';
 import { useNavigate } from 'react-router';
+import { BoltRounded } from '@mui/icons-material';
 
 function CreateEvent() {
   const API_URL = import.meta.env.VITE_API_URL;
@@ -193,8 +194,8 @@ function CreateEvent() {
         <div className="form">
           <Container maxWidth="sm">
             <Box component="form" onSubmit={handleSubmit} sx={{ mt: 3, mb: 4, pt: 4 }}>
-              <Typography variant="h4" fontFamily={'Times New Roman'} gutterBottom>
-                Vendez vos biens immobiliers
+              <Typography variant="h3" fontFamily={'Times New Roman'} gutterBottom>
+                Création de l'estimation
               </Typography>
               <TextField
                 fullWidth
@@ -214,15 +215,7 @@ function CreateEvent() {
                 onChange={(e) => setDescription(e.target.value)}
                 required
               />
-               <TextField
-                fullWidth
-                margin="normal"
-                label="Prix (€)"
-                type="number"
-                value={price}
-                onChange={(e) => setPrice(e.target.value)}
-                required
-              />
+           
                   <FormControl fullWidth margin="normal">
                 <InputLabel>Type de bien</InputLabel>
                 <Select value={propertyType} onChange={(e) => setPropertyType(e.target.value)}>
@@ -257,18 +250,7 @@ function CreateEvent() {
                 value={floor}
                 onChange={(e) => setFloor(e.target.value)}
               />
-              <TextField
-                fullWidth
-                margin="normal"
-                label="Date de mise en vente"
-                type="date"
-                value={startDate}
-                onChange={(e) => setStartDate(e.target.value)}
-                InputLabelProps={{
-                  shrink: true,
-                }}
-                required
-              />
+          
           
               <TextField
                 fullWidth
@@ -296,27 +278,18 @@ function CreateEvent() {
                 )}
               />
             
-              <FormControl fullWidth margin="normal">
-                <InputLabel>Statut</InputLabel>
-                <Select value={1} required>
-                  <MenuItem onSelect={(e) => handleStatusChange(e)} value={1}>
-                    À Vendre
-                  </MenuItem>
-                  <MenuItem onSelect={(e) => handleStatusChange(e)} value={0}>
-                    Vendu
-                  </MenuItem>
-                </Select>
-              </FormControl>
+         
               <ImgPicker url={image} setUrl={setImage} />
        
             
               <Button
+              size="medium"
                 type="submit"
                 variant="contained"
                 color="primary"
-                sx={{ mt: 7, mb:4}}
+                sx={{ mt: 7, mb:2}}
               >
-                Créer une annonce 
+                Valider
               </Button>
             </Box>
           </Container>
