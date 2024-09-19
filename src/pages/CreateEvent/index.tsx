@@ -190,7 +190,7 @@ function CreateEvent() {
       <div className="background_bg">
         <div className="form">
           <Container maxWidth="sm">
-            <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
+            <Box component="form" onSubmit={handleSubmit} sx={{ mt: 3, mb: 4, pt: 4 }}>
               <Typography variant="h4" fontFamily={'Times New Roman'} gutterBottom>
                 Vendez vos biens immobiliers
               </Typography>
@@ -212,22 +212,11 @@ function CreateEvent() {
                 onChange={(e) => setDescription(e.target.value)}
                 required
               />
+          
               <TextField
                 fullWidth
                 margin="normal"
-                label="Heure de début"
-                type="time"
-                value={startTime}
-                onChange={(e) => setStartTime(e.target.value)}
-                InputLabelProps={{
-                  shrink: true,
-                }}
-                required
-              />
-              <TextField
-                fullWidth
-                margin="normal"
-                label="Date de début"
+                label="Date de mise en vente"
                 type="date"
                 value={startDate}
                 onChange={(e) => setStartDate(e.target.value)}
@@ -236,18 +225,7 @@ function CreateEvent() {
                 }}
                 required
               />
-              <TextField
-                fullWidth
-                margin="normal"
-                label="Date de fin"
-                type="date"
-                value={endDate}
-                onChange={(e) => setEndDate(e.target.value)}
-                InputLabelProps={{
-                  shrink: true,
-                }}
-                required
-              />
+          
               <TextField
                 fullWidth
                 margin="normal"
@@ -273,36 +251,20 @@ function CreateEvent() {
                   <TextField {...params} label="Ville" margin="normal" />
                 )}
               />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={confidentiality}
-                    onChange={(e) => setConfidentiality(e.target.checked)}
-                  />
-                }
-                label="Confidentialité"
-              />
+            
               <FormControl fullWidth margin="normal">
                 <InputLabel>Statut</InputLabel>
                 <Select value={1} required>
                   <MenuItem onSelect={(e) => handleStatusChange(e)} value={1}>
-                    En cours
+                    À Vendre
                   </MenuItem>
                   <MenuItem onSelect={(e) => handleStatusChange(e)} value={0}>
-                    Terminé
+                    Vendu
                   </MenuItem>
                 </Select>
               </FormControl>
               <ImgPicker url={image} setUrl={setImage} />
-              <TextField
-                fullWidth
-                margin="normal"
-                label="Nombre max de participants"
-                type="number"
-                value={maxParticipants}
-                onChange={(e) => setMaxParticipants(e.target.value)}
-                required
-              />
+       
               <FormControlLabel
                 control={
                   <Checkbox
@@ -311,12 +273,13 @@ function CreateEvent() {
                   />
                 }
                 label="Accessibilité PMR"
+                sx={{ mb: 12 }}
               />
               <Button
                 type="submit"
                 variant="contained"
                 color="primary"
-                sx={{ mt: 2 }}
+                sx={{ mt: 7, mr: 20}}
               >
                 Créer une annonce 
               </Button>
