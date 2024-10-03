@@ -14,7 +14,7 @@ import CookiePopup from '../../components/CookiePopup/CookiePopup';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './index.scss';
-import CreateEvent from '../CreateEvent';
+import CreateEvent from '../CreateEstmation';
 
 function HomePage() {
   const { t } = useTranslation(); // Hook pour la traduction

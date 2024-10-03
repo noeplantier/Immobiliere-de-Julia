@@ -6,7 +6,6 @@ import GlobalContext from '../../context/GlobalContext';
 import { Event } from '../../@types';
 import EventList from '../../components/EventList';
 import accountServices from '../../_services/account.service';
-import ConfirmDialog from '../../components/ConfirmDialog';
 import ImgPicker from '../../components/ImagePicker';
 
 function ProfilePage() {

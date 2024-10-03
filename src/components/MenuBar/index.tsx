@@ -9,7 +9,7 @@ function MenuBar() {
         Accueil
       </Link>
     
-      <Link to="/events" className="menu-link">
+      <Link to="/sales" className="menu-link">
         Nos biens immobiliers
       </Link>
       <Link to="/team" className="menu-link">

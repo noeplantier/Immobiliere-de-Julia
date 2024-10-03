@@ -1,0 +1,62 @@
+.biens-container {
+    width: 100%;
+    padding: 2rem;
+    background-color: #f9f9f9; // Couleur d’arrière-plan neutre
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .biens-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #34495e; // Titre foncé
+  }
+  
+  .biens-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  
+  .bien-card {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Ombre légère
+    width: calc(33% - 2rem); // 3 cartes par ligne
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    color: #2c3e50;
+  }
+  
+  .bien-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .bien-card p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  
+  .map-container {
+    margin-top: 4rem;
+    text-align: center;
+  }
+  
+  .map-container h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #34495e;
+  }
+  
+  .biens-map {
+    height: 500px;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  

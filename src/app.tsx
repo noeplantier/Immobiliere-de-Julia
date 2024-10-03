@@ -3,24 +3,21 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './layouts/Header';
 import AuthGuard from './_helpers/AuthGuard';
 import HomePage from './pages/HomePage';
-import EventDetails from './pages/EventDetails';
 import ProfilePage from './pages/ProfilePage';
 import ErrorPage from './pages/ErrorPage';
 import Footer from './layouts/Footer';
 import LegalNotices from './components/LegalNotices';
-import ContactsPage from './pages/ContactsPage';
 import TeamPage from './pages/TeamPage';
-import PartnersPage from './pages/PartnersPage';
 import Faq from './components/Faq';
-import EventCard from './components/EventCard';
 import GlobalContext from './context/GlobalContext';
-import CreateEvent from './pages/CreateEvent';
-import EventList from './components/EventList';
+import CreateEvent from './pages/CreateEstmation';
 import MenuBar from './components/MenuBar';
 import RegisterForm from './components/RegisterForm';
 import ConnexionForm from './components/ConnexionForm';
 import Acheter from './pages/BuyPage';
 import Louer from './pages/RentPage';
+import CreateEstimation from './pages/CreateEstmation';
+import Forsale from './pages/ForSale';
 
 function App() {
   const [user, setUser] = useState({});
@@ -37,23 +34,15 @@ function App() {
           <main>
             <Routes>
               <Route path="/" element={<HomePage />} />
+              <Route path="/sales" element={<Forsale/>}/>
               <Route path="/register" element={<RegisterForm />} />
               <Route path="/login" element={<ConnexionForm />} />
               <Route path="/create-event" element={<CreateEvent />} />
-              <Route path="/contacts" element={<ContactsPage />} />
-              <Route path="/events" element={<EventDetails />} />
               <Route path="/team" element={<TeamPage />} />
-              <Route path="/partners" element={<PartnersPage />} />
               <Route path="/faq" element={<Faq />} />
-              <Route path="/event/:id" element={<EventDetails />} />
               <Route path="/mentions-legales" element={<LegalNotices />} />
               <Route path="/buy" element={<Acheter />} />
               <Route path="/rent" element={<Louer />} />
-              
-
-
-
-
               <Route
                 path="/user/me"
                 element={
@@ -66,7 +55,7 @@ function App() {
                 path="/event"
                 element={
                   <AuthGuard>
-                    <CreateEvent />
+                    <CreateEstimation />
                   </AuthGuard>
                 }
               />
