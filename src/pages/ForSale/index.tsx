@@ -6,18 +6,19 @@ import 'leaflet/dist/leaflet.css';
 const biensData = [
   {
     id: 1,
-    title: "Maison T3 à Crosne",
+    title: "Maison T3 à Plonévez-du-Faou",
     status: "À vendre",
-    surface: "85m²",
-    location: "Crosne, 91560",
-    saleDate: "2024-10-01",
-    price: "350,000 €",
-    description: "Belle maison de 3 pièces avec jardin à Crosne.",
-    energyRating: "C",
-    gasEmission: "D",
+    surface: "139 m²",
+    terrain: "428 m²",
+    location: "Plonévez-du-Faou, 29530",
+    saleDate: "2024-09-17", 
+    price: "110 000 €",
+    description: "Belle maison de 7 pièces avec jardin à Plonévez-du-Faou.",
+    energyRating: "Vierge",
+    gasEmission: "Vierge",
     coordinates: [48.6844, 2.4441]
   },
-  // Ajoute plus de biens immobiliers ici
+  
 ];
 
 const Forsale = () => {

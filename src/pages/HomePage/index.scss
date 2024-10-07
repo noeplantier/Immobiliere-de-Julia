@@ -8,7 +8,10 @@
 }
 
 .homepage {
-  
+  background-image: url('https://img.freepik.com/premium-vector/white-gray-smooth-gradient-background-wallpaper-vector-image-backdrop-presentation_1110513-1645.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color:  #266de7;
   font-family: "Times New Roman", Times, serif;  
   width: 100%;
@@ -17,8 +20,9 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.079);
 }
+
 
 .eventList_title {
   font-size: 2rem;
@@ -42,49 +46,6 @@
   }
 }
 
-.event-list {
-  width: 100%;
-  opacity: 0;
-  transform: translateX(130%);
-  transition:
-    transform 0.8s ease-out,
-    opacity 0.5s ease-out;
-
-  &.visible {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  .slick-prev,
-  .slick-next {
-    font-size: 0;
-    line-height: 0;
-    position: absolute;
-    top: 50%;
-    display: block;
-    width: 20px;
-    height: 20px;
-    padding: 0;
-    transform: translate(0, -50%);
-    cursor: pointer;
-    color: transparent;
-    border: none;
-    outline: none;
-    background: transparent;
-    z-index: 1;
-
-    &:before {
-      font-family: 'slick';
-      font-size: 30px;
-      line-height: 1;
-      opacity: 0.75;
-      color: #ffffff;
-    }
-
-    &.slick-disabled:before {
-      opacity: 0.25;
-    }
-  }
 
   .slick-prev {
     left: -25px;
@@ -116,7 +77,7 @@
       }
     }
   }
-}
+
 
 .slick-slide {
   padding: 50px;
@@ -146,12 +107,12 @@
   position: relative;
 
   .carousel-image {
-    width: 100vh;
-    height: 90vh;
+    width: 50vh;
+    height: 50vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.1s ease-in-out;
     opacity: 0;
     top: 0;
     left: 0;

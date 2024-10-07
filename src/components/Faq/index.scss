@@ -2,6 +2,8 @@
   padding: 2rem;
   max-width: 800px;
   margin: 0 auto;
+  font-family:'Times New Roman', Times, serif;
+
 }
 
 .faq-title {
@@ -20,6 +22,7 @@
 }
 
 .MuiAccordion-root {
+  width: 150vh;
   background-color: #00274d;
   border: none;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -37,7 +40,7 @@
   color: white;
 
   &:hover {
-    background-color: #00274d;
+    background-color:#266de7;
   }
 
   .MuiAccordionSummary-expandIcon {
@@ -46,6 +49,7 @@
 }
 
 .MuiAccordionDetails-root {
+  width: 150vh;
   font-family: "Times New Roman", Times, serif;  
   font-size: 2rem;
   background-color: #fff;
@@ -56,6 +60,3 @@
   line-height: 2;
 }
 
-.container{
-  font-family: "Times New Roman", Times, serif;  
-}

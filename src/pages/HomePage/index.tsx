@@ -2,8 +2,6 @@ import React, { useEffect, useState, useRef, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { ReactSession } from 'react-client-session';
-import EventSearchbox from '../../components/EventsSearchbox';
-import EventList from '../../components/EventList';
 import type { Event } from '../../@types';
 import Faq from '../../components/Faq';
 import Splitter from '../../components/Splitter';
@@ -14,7 +12,8 @@ import CookiePopup from '../../components/CookiePopup/CookiePopup';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './index.scss';
-import CreateEvent from '../CreateEstmation';
+import ContactForm from '../../components/ContactsForm/ContactsForm';
+import ChatBot from '../../components/ChatBot/ChatBot';
 
 function HomePage() {
   const { t } = useTranslation(); // Hook pour la traduction
@@ -161,13 +160,11 @@ function HomePage() {
   return (
     <div className="homepage">
       <CookiePopup data-aos="zoom-in-up" />
-
+     
       <div className="hero-img-container">
         <div className="event-search">
-          <EventSearchbox
-            setListEvents={setListEvents}
-            userLocation={userLocation}
-          />
+        <ChatBot/>
+        
         </div>
       </div>
       <div>
@@ -221,6 +218,7 @@ function HomePage() {
 
       <Splitter />
       <Faq data-aos="zoom-in" />
+      <ContactForm/>
     </div>
   );
 }

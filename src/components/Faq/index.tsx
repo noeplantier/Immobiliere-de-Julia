@@ -59,6 +59,8 @@ const QuestionContainer = styled('div')({
   borderRadius: '8px',
   margin: '2rem 2rem 0 2rem',
   boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+  fontFamily:'Times New Roman',
+
 });
 
 const TeamQuestionContainer = styled('div')({
@@ -67,6 +69,8 @@ const TeamQuestionContainer = styled('div')({
   borderRadius: '8px',
   margin: '2rem 2rem 0 2rem',
   boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+  fontFamily:'Times New Roman',
+
 });
 
 const QuestionTitle = styled(Typography)({
@@ -85,6 +89,8 @@ const Textarea = styled('textarea')({
   border: '1px solid #ccc',
   fontSize: '1.1rem',
   resize: 'vertical',
+  fontFamily:'Times New Roman',
+
 });
 
 export default function CustomizedAccordions() {
@@ -100,10 +106,6 @@ export default function CustomizedAccordions() {
     const teamMembers = [
       'Noé Plantier',
       'Julie Gondard',
-      'Florent Desallangre',
-      'Justine Bouetard',
-      'Développeur Mystère',
-      'Kilian Plusquellec',
     ];
 
     // Choisir un membre de l'équipe au hasard
@@ -118,32 +120,14 @@ export default function CustomizedAccordions() {
 
   return (
     <div className="container">
-      <h2 className="faq-title">Vos questions, nos réponses..</h2>
-
-      <QuestionContainer           fontFamily={'Times New Roman'}
->
-        <QuestionTitle fontFamily={'Times New Roman'}>Posez votre question juste ici</QuestionTitle>
-        <Textarea
-          placeholder="Écrivez votre question ici..."
-          value={userQuestion}
-          onChange={(e) => setUserQuestion(e.target.value)}
-        />
-        <Button
-          size="large" 
-          variant="contained"
-          className="question-submit"
-          onClick={handleQuestionSubmit}
-        >
-          Cliquez ici 
-        </Button>
-      </QuestionContainer>
-      <Splitter />
+     
+    
       <h2 className="faq-title">Questions les plus fréquentes</h2>
 
       <QuestionContainer >
         <Accordion onChange={handleChange('panel1')}>
           <AccordionSummary
-            fontFamily={'Times New Roman'}
+            fontFamily="Times New Roman"
             aria-controls="panel1d-content"
             id="panel1d-header"
             color="black"
