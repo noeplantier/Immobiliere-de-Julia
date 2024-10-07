@@ -2,10 +2,7 @@
   display:inline-block;
   flex-direction: column;
   align-items: center;
-  justify-content: left;
-  
   width: 100%;
-  background: linear-gradient(to bottom right, #85C1E9, #D6EAF8); // Dégradé bleu pour un effet "mer"
   background-size: cover;
 
 }
@@ -23,7 +20,7 @@
 }
 
 .acheter-title {
-  color: #2874A6; // Bleu plus profond pour rappeler l'océan
+  
   font-family:'Times New Roman', Times, serif;
   margin-bottom: 1.5rem;
 }
