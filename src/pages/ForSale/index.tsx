@@ -2,6 +2,8 @@ import React from 'react';
 import './index.scss';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'; // Utilise React Leaflet pour la carte interactive
 import 'leaflet/dist/leaflet.css';
+import { Image } from '@mui/icons-material';
+
 
 const biensData = [
   {
@@ -16,7 +18,7 @@ const biensData = [
     description: "Belle maison de 7 pièces avec jardin à Plonévez-du-Faou.",
     energyRating: "Vierge",
     gasEmission: "Vierge",
-    coordinates: [48.6844, 2.4441]
+    coordinates: [48.2654362,-3.8918792,12]
   },
   
 ];
@@ -25,7 +27,12 @@ const Forsale = () => {
   return (
     <div className="biens-container">
       <h1 className="biens-title">Nos biens immobiliers</h1>
+      <div className="biens-pictures">
 
+
+
+
+      </div>
       <div className="biens-list">
         {biensData.map((bien) => (
           <div key={bien.id} className="bien-card">

@@ -1,15 +1,20 @@
 .biens-container {
     width: 100%;
+    height: auto;
     padding: 2rem;
-    background-color: #f9f9f9; // Couleur d’arrière-plan neutre
+    background-color: #f9f9f9; 
     font-family: 'Arial', sans-serif;
+      background-image: url('https://img.freepik.com/vecteurs-libre/fond-demi-teintes-bleu-blanc_53876-99003.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   }
   
   .biens-title {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: #34495e; // Titre foncé
+    color: #34495e;
   }
   
   .biens-list {
@@ -23,11 +28,11 @@
     background-color: #fff;
     padding: 1.5rem;
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Ombre légère
-    width: calc(33% - 2rem); // 3 cartes par ligne
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    width: 100vh; 
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
+    margin-left: 20rem;
     color: #2c3e50;
   }
   

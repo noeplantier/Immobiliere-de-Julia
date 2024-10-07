@@ -7,18 +7,16 @@ import ProfilePage from './pages/ProfilePage';
 import ErrorPage from './pages/ErrorPage';
 import Footer from './layouts/Footer';
 import LegalNotices from './components/LegalNotices';
-import TeamPage from './pages/ContactsPage';
 import Faq from './components/Faq';
 import GlobalContext from './context/GlobalContext';
 import CreateEvent from './pages/CreateEstmation';
 import MenuBar from './components/MenuBar';
 import RegisterForm from './components/RegisterForm';
 import ConnexionForm from './components/ConnexionForm';
-import Acheter from './pages/BuyPage';
-import Louer from './pages/RentPage';
+import BuyPage from './pages/BuyPage';
+import RentPage from './pages/RentPage';
 import CreateEstimation from './pages/CreateEstmation';
 import Forsale from './pages/ForSale';
-import ContactsPage from './pages/ContactsPage';
 import ContactForm from './components/ContactsForm/ContactsForm';
 
 function App() {
@@ -40,11 +38,10 @@ function App() {
               <Route path="/register" element={<RegisterForm />} />
               <Route path="/login" element={<ConnexionForm />} />
               <Route path="/create-event" element={<CreateEvent />} />
-              <Route path="/sales" element={<ContactsPage />} />
               <Route path="/faq" element={<Faq />} />
               <Route path="/mentions-legales" element={<LegalNotices />} />
-              <Route path="/buy" element={<Acheter />} />
-              <Route path="/rent" element={<Louer />} />
+              <Route path="/buy" element={<BuyPage />} />
+              <Route path="/rent" element={<RentPage />} />
               <Route path="/contacts" element={<ContactForm />} />
               <Route
                 path="/user/me"

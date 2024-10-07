@@ -1,45 +1,44 @@
-.acheter-container {
-  display:inline-block;
+.container {
+  display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  min-height: 100%; 
   width: 100%;
-  background-size: cover;
-
+  margin-right: 10rem;
+  
 }
 
-.acheter-form {
-  align-items: center;
-  justify-content:center;
+.form {
   background-color: #fff;
   border-radius: 12px;
   width: 100%;
-  max-width: 600px;
-  padding: 2rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); // Effet d'ombre plus prononcé
-  margin-bottom: 2rem;
+  max-width: 600px; 
+  padding: 2rem; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  margin-bottom: 2rem; 
+  margin-top: 2rem; 
+  margin-left: 26rem;
+
 }
 
-.acheter-title {
-  
-  font-family:'Times New Roman', Times, serif;
-  margin-bottom: 1.5rem;
+.background_bg {
+  background: url('https://img.freepik.com/vecteurs-libre/fond-demi-teintes-bleu-blanc_53876-99003.jpg');
+  padding: 3rem 0;
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
 }
 
-.acheter-input {
-  margin-bottom: 1.5rem;
-  .MuiInputBase-root {
-    background-color: #F4F6F7; // Fond gris clair pour les champs
-  }
-  .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
-    border-color: #2980B9; // Bordure bleue lors du focus
-  }
+button {
+  margin-top: 1.5rem;
 }
 
-.acheter-button {
-  background-color: #2980B9; // Bleu profond pour le bouton
-  color: white;
-  font-weight: bold;
-  &:hover {
-    background-color: #1F618D; // Bleu plus sombre au hover
-  }
+input,
+textarea,
+select {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }

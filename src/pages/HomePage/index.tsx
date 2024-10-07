@@ -160,7 +160,7 @@ function HomePage() {
   return (
     <div className="homepage">
       <CookiePopup data-aos="zoom-in-up" />
-     
+      <h1 className="biens-title">Découvrez notre univers</h1>
       <div className="hero-img-container">
         <div className="event-search">
         <ChatBot/>

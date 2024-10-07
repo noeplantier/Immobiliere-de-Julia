@@ -1,91 +1,150 @@
 import React, { useState } from 'react';
-import { TextField, Button, Container, Typography, Box } from '@mui/material';
-import './index.scss'; 
+import {
+  TextField,
+  Button,
+  Container,
+  Typography,
+  Box,
+} from '@mui/material';
+import './index.scss';
 
-function Louer() {
-  const [searchData, setSearchData] = useState({
-    city: '',
-    budget: '',
-    propertyType: ''
-  });
+function RentPage() {
+  const [surname, setSurname] = useState('');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [city, setCity] = useState('');
+  const [price, setPrice] = useState('');
+  const [type, setType] = useState('');
+  const [message, setMessage] = useState('');
 
-  const handleChange = (e) => {
-    setSearchData({ ...searchData, [e.target.name]: e.target.value });
-  };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('Acheter form data:', searchData);
-    // Logic to search for properties
+    const contactData = {
+      surname,
+      name,
+      email,
+      phone,
+      city,
+      price,
+      type,
+      message
+    };
+    console.log('Form Data Submitted:', contactData);
+
+    try {
+      const response = await fetch('URL_API/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(contactData),
+      });
+
+      if (response.ok) {
+        alert('Message envoyé avec succès !');
+        // Reset form fields
+        setName('');
+        setEmail('');
+        setPhone('');
+        setCity('');
+        setPrice('');
+        setType('');
+        setMessage('');
+      
+      } else {
+        alert('Erreur lors de l\'envoi du message.');
+      }
+    } catch (error) {
+      console.error('Erreur lors de l\'envoi:', error);
+      alert('Erreur technique.');
+    }
   };
 
   return (
-    <Container className="acheter-container">
-      <Box component="form" onSubmit={handleSubmit} className="acheter-form">
-        <Typography variant="h2" className="acheter-title">Louer un bien immobilier</Typography>
-        
-        <TextField 
-          fullWidth 
-          label="Prénom" 
-          name="surname" 
-          onChange={handleChange} 
-          className="acheter-input" 
-        />
-        <TextField 
-          fullWidth 
-          label="Nom" 
-          name="name" 
-          onChange={handleChange} 
-          className="acheter-input" 
-        />
-             <TextField 
-          fullWidth 
-          label="E-mail" 
-          name="mail" 
-          onChange={handleChange} 
-          className="acheter-input" 
-        />
-                <TextField 
-          fullWidth 
-          label="Téléphone" 
-          name="phone" 
-          onChange={handleChange} 
-          className="acheter-input" 
-        />
-        <TextField 
-          fullWidth 
-          label="Ville" 
-          name="city" 
-          value={searchData.city} 
-          onChange={handleChange} 
-          className="acheter-input" 
-        />
-        <TextField 
-          fullWidth 
-          label="Loyer moyen (€)" 
-          name="budget" 
-          value={searchData.budget} 
-          onChange={handleChange} 
-          className="acheter-input" 
-        />
-        <TextField 
-          fullWidth 
-          label="Type de bien" 
-          name="propertyType" 
-          value={searchData.propertyType} 
-          onChange={handleChange} 
-          className="acheter-input" 
-        />
-        <Button 
-          type="submit" 
-          variant="contained" 
-          className="acheter-button"
-        >
-          Rechercher
-        </Button>
-      </Box>
-    </Container>
+    <div className="contact-container">
+      <div className="background_bg">
+        <div className="form">
+          <Container maxWidth="sm">
+            <Box component="form" onSubmit={handleSubmit} sx={{ mt: 3, mb: 4, pt: 4 }}>
+              <Typography variant="h3" fontFamily={'Times New Roman'} gutterBottom>
+                Louer un bien 
+              </Typography>
+              <TextField
+                fullWidth
+                margin="normal"
+                label="Prénom"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
+              <TextField
+                fullWidth
+                margin="normal"
+                label="Nom"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              /> 
+              <TextField
+                fullWidth
+                margin="normal"
+                label="E-mail"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <TextField
+                fullWidth
+                margin="normal"
+                label="Téléphone"
+                type="tel"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+              />
+                   <TextField
+                fullWidth
+                margin="normal"
+                label="Ville"
+                type="city"
+                value={city}
+                onChange={(e) => setPhone(e.target.value)}
+              />
+                   <TextField
+                fullWidth
+                margin="normal"
+                label="Prix"
+                type="price"
+                value={price}
+                onChange={(e) => setPhone(e.target.value)}
+              />
+              <TextField
+                fullWidth
+                margin="normal"
+                label="Type de bien"
+                multiline
+                rows={4}
+                value={type}
+                onChange={(e) => setMessage(e.target.value)}
+                required
+              />
+              <Button
+                size="medium"
+                type="submit"
+                variant="contained"
+                color="primary"
+                sx={{ mt: 4, mb: 2 }}
+              >
+                Envoyer
+              </Button>
+            </Box>
+          </Container>
+        </div>
+      </div>
+    </div>
   );
 }
 
-export default Louer;
+export default RentPage;

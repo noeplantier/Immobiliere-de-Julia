@@ -9,6 +9,7 @@ import {
 import './ContactsForm.scss';
 
 function ContactForm() {
+  const [surname, setSurname] = useState('');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -17,6 +18,7 @@ function ContactForm() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const contactData = {
+      surname,
       name,
       email,
       phone,
@@ -24,7 +26,6 @@ function ContactForm() {
     };
     console.log('Form Data Submitted:', contactData);
 
-    // Tu peux ajouter ici la logique pour envoyer les données au serveur
     try {
       const response = await fetch('URL_API/contact', {
         method: 'POST',
@@ -37,6 +38,7 @@ function ContactForm() {
       if (response.ok) {
         alert('Message envoyé avec succès !');
         // Reset form fields
+        setSurname('');
         setName('');
         setEmail('');
         setPhone('');
@@ -59,6 +61,14 @@ function ContactForm() {
               <Typography variant="h3" fontFamily={'Times New Roman'} gutterBottom>
                 Contactez-nous
               </Typography>
+              <TextField
+                fullWidth
+                margin="normal"
+                label="Prénom"
+                value={surname}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
               <TextField
                 fullWidth
                 margin="normal"
