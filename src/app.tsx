@@ -30,7 +30,7 @@ function App() {
       <div className="App" style={{ maxWidth: '100vw' }}>
         <GlobalContext.Provider value={value}>
           <Header />
-          <MenuBar /> {}
+          <MenuBar /> 
           <main>
             <Routes>
               <Route path="/" element={<HomePage />} />
@@ -43,6 +43,8 @@ function App() {
               <Route path="/buy" element={<BuyPage />} />
               <Route path="/rent" element={<SalePage />} />
               <Route path="/contacts" element={<ContactForm />} />
+              <Route path="/estimate" element={<CreateEstimation />} />
+
               <Route
                 path="/user/me"
                 element={

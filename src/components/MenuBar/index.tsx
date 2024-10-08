@@ -17,6 +17,9 @@ function MenuBar() {
       <Link to="/rent" className="menu-link">
         Vendre
       </Link>
+      <Link to="/estimate" className="menu-link">
+        Estimer
+      </Link>
          <Link to="/contacts" className="menu-link">
          Contacts
          </Link>

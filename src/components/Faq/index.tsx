@@ -113,7 +113,6 @@ export default function CustomizedAccordions() {
       <QuestionContainer >
         <Accordion onChange={handleChange('panel1')}>
           <AccordionSummary
-            fontFamily="Times New Roman"
             aria-controls="panel1d-content"
             id="panel1d-header"
             color="black"

@@ -161,6 +161,11 @@ function HomePage() {
     <div className="homepage">
       <CookiePopup data-aos="zoom-in-up" />
       <h1 className="biens-title">Découvrez notre univers</h1>
+      <img className="brittany-sky"
+          src="src/assets/brittany-sky.jpeg"
+          alt="brittany-sky"
+        />
+        
       <div className="hero-img-container">
         <ChatBot/>
         
@@ -174,20 +179,7 @@ function HomePage() {
           {'Faites estimer votre bien'}
         </button>
       </div>
-      <Splitter />
-
-      <h2 className="eventList_title" data-aos="zoom-in-up">
-        {'Nos biens immobiliers'}
-      </h2>
-      <div
-        ref={eventListRef}
-        className={`event-list ${isEventListVisible ? 'visible' : ''}`}
-        data-aos="zoom-in"
-      >
-       
-      </div>
-
-      <Splitter />
+      
 
       <h2 className="eventList_title" data-aos="zoom-in-up">
         {'Découvrez notre patrimoine'}

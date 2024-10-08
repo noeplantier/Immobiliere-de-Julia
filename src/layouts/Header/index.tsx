@@ -114,8 +114,7 @@ function Header() {
           <ConnexionForm
             onClose={() => setIsConnexionModalOpen(false)}
             setIsRegisterModalOpen={setIsRegisterModalOpen}
-            setIsConnexionModalOpen={setIsConnexionModalOpen}
-          />
+            setIsConnexionModalOpen={setIsConnexionModalOpen} isConnexionModalOpen={false}          />
         </Dialog>
       </header>
     </>

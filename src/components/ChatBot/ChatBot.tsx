@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './ChatBot.scss';
-import logo from '../../assets/immo-logo.jpeg';
+import logo from '../../assets/immo-logo.jpeg'; // Importation du logo
+import { Image } from '@mui/icons-material';
 
 function ChatbotComponent () {
   const [messages, setMessages] = useState<{user: string, bot: string}[]>([]);
@@ -24,7 +25,7 @@ function ChatbotComponent () {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer YOUR_API_KEY` // Insère ta clé d'API ici
+        'Authorization': `Bearer ${process.env.REACT_APP_OPENAI_API_KEY}` // Utilisation de la clé API depuis .env
       },
       body: JSON.stringify({
         model: 'text-davinci-003', // Modèle de l'IA
@@ -40,9 +41,7 @@ function ChatbotComponent () {
 
   return (
     <div>
-      {/* Logo qui ouvre le ChatBot */}
-      <img
-        src={logo}
+      <img src='src/assets/immo-logo.jpeg'
         alt="Logo ChatBot"
         className="chatbot-logo"
         onClick={() => setIsOpen(!isOpen)}
@@ -51,8 +50,9 @@ function ChatbotComponent () {
       {isOpen && (
         <div className="chatbot">
           <div className="chatbot-header">
-            <h2>ChatBot</h2>
-            <button onClick={() => setIsOpen(false)}>X</button> {/* Bouton de fermeture */}
+            <Image className="immo-logo" src={"/public/immo-logo.jpeg"}></Image>
+            <h2>Maël, votre assistant intelligent</h2>
+            <button onClick={() => setIsOpen(false)}>x</button> 
           </div>
           <div className="chatbot-messages">
             {messages.map((message, index) => (
