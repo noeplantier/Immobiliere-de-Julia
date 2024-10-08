@@ -199,10 +199,7 @@ function ProfilePage() {
         )}
       </Card>
 
-      <Box className="event-list-container">
-        <EventList events={listEvents} />
-      </Box>
-
+   
       <Button variant="outlined" color="error" onClick={handleClickOpen}>
         Supprimer le compte
       </Button>

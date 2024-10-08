@@ -162,10 +162,9 @@ function HomePage() {
       <CookiePopup data-aos="zoom-in-up" />
       <h1 className="biens-title">Découvrez notre univers</h1>
       <div className="hero-img-container">
-        <div className="event-search">
         <ChatBot/>
         
-        </div>
+        
       </div>
       <div>
         <button
@@ -185,13 +184,7 @@ function HomePage() {
         className={`event-list ${isEventListVisible ? 'visible' : ''}`}
         data-aos="zoom-in"
       >
-        <Slider {...settings}>
-          {listEvents.map((event) => (
-            <div key={event.id}>
-              <EventList events={[event]} />
-            </div>
-          ))}
-        </Slider>
+       
       </div>
 
       <Splitter />
@@ -218,7 +211,7 @@ function HomePage() {
 
       <Splitter />
       <Faq data-aos="zoom-in" />
-      <ContactForm/>
+     
     </div>
   );
 }

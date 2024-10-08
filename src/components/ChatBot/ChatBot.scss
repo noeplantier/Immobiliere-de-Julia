@@ -1,52 +1,66 @@
+.chatbot-logo {
+  width: 100vh;
+  height: 100vh;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
 .chatbot {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 300px;
-    max-height: 400px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-  
-    .chatbot-messages {
-      flex-grow: 1;
-      overflow-y: auto;
-      margin-bottom: 10px;
-    }
-  
-    .chatbot-message {
-      margin-bottom: 10px;
-      .user-message {
-        text-align: right;
-        color: #266de7;
-      }
-      .bot-message {
-        text-align: left;
-        color: #ff5733;
-      }
-    }
-  
-    input {
-      border: 1px solid #ddd;
-      padding: 8px;
-      border-radius: 5px;
-      width: 100%;
-    }
-  
-    button {
-      background-color: #266de7;
-      color: white;
-      border: none;
-      padding: 10px;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-top: 10px;
-      &:hover {
-        background-color: #1e56b2;
-      }
-    }
-  }
-  
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 300px;
+  max-height: 400px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.chatbot-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+}
+
+.chatbot-messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.chatbot-message {
+  margin-bottom: 10px;
+}
+
+.user-message {
+  background-color: #d1fcd3;
+  padding: 8px;
+  border-radius: 5px;
+  text-align: right;
+}
+
+.bot-message {
+  background-color: #f1f1f1;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+input {
+  padding: 10px;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 0 0 10px 10px;
+}

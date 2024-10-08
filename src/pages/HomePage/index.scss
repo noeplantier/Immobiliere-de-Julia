@@ -23,17 +23,6 @@
   background-color: rgba(255, 255, 255, 0.079);
 }
 
-
-.eventList_title {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  text-align: center;
-  &:hover {
-    color:  #266de7;
-    transition: color 0.3s ease;
-  }
-}
-
 [data-aos='zoom-in-up'] {
   opacity: 0;
   transform: scale(0.8);
@@ -46,6 +35,10 @@
   }
 }
 
+.h1{
+
+  font-size: 5rem;
+}
 
   .slick-prev {
     left: -25px;
@@ -110,31 +103,27 @@
 
 
   .carousel-image {
-    width: 50vh;
-    height: 50vh;
+    width: 100vh;
+    height: 80vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    transition: opacity 0.1s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
     opacity: 0;
     top: 0;
     left: 0;
   }
 
   .active {
-    opacity: 1;
+    opacity: 5;
   }
 }
 
-@media (max-width: 600px) {
-  .eventList_title {
-    font-size: 1.5rem;
-  }
 
   .slick-slide {
     padding: 20px;
   }
-}
+
 
 .create-event-button {
   margin-top: 20%;
