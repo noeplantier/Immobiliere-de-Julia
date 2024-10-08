@@ -174,9 +174,7 @@ function CreateEstimation() {
         <div className="form">
           <Container maxWidth="sm">
             <Box component="form" onSubmit={handleSubmit} sx={{ mt: 3, mb: 4, pt: 4 }}>
-              <Typography variant="h3" fontFamily={'Times New Roman'} gutterBottom>
-                Création de l'estimation
-              </Typography>
+            <h1 className="biens-title">Estimation</h1>
               <TextField
                 fullWidth
                 margin="normal"

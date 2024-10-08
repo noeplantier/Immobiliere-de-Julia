@@ -13,7 +13,7 @@
 
   &-content {
     position: relative;
-    background-color: #266de7;
+    background-image: url('https://img.freepik.com/photos-gratuite/fond-texture-abstrait_1258-30515.jpg?t=st=1728417372~exp=1728420972~hmac=39d9479bb00c90e5addffb345d015ac654323012c22582f5891034d990b35a09&w=740');
     background-position: fixed;
     border-radius: 10px;
     padding: 1rem;
@@ -72,8 +72,8 @@
         cursor: pointer;
         font-size: 16px;
         color: white;
-        background: #0d367b;
-        transition: background 0.3s ease;
+        background-image: url('https://img.freepik.com/photos-gratuite/fond-texture-abstrait_1258-30515.jpg?t=st=1728417372~exp=1728420972~hmac=39d9479bb00c90e5addffb345d015ac654323012c22582f5891034d990b35a09&w=740');
+        transition:  0.3s ease;
 
         &:hover {
           background: rgb(71, 70, 70);

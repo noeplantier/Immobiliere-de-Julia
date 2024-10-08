@@ -160,11 +160,12 @@ function HomePage() {
   return (
     <div className="homepage">
       <CookiePopup data-aos="zoom-in-up" />
-      <h1 className="biens-title">Découvrez notre univers</h1>
       <img className="brittany-sky"
           src="src/assets/brittany-sky.jpeg"
           alt="brittany-sky"
         />
+      <h1 className="biens-title">Découvrez notre univers</h1>
+      <h2>Forte de son engagement envers ses clients et de sa connaissance approfondie du marché, **L'Immobilière de Julia** accompagne les particuliers et les professionnels dans leurs projets, qu'ils soient à la recherche d'une résidence principale, d'une propriété de vacances ou d'investissements locatifs. Avec une approche personnalisée, Armel Moizant et son équipe mettent un point d'honneur à offrir un service de qualité, basé sur l'écoute, la transparence et la confiance.</h2>
         
       <div className="hero-img-container">
         <ChatBot/>
@@ -181,19 +182,8 @@ function HomePage() {
       </div>
       
 
-      <h2 className="eventList_title" data-aos="zoom-in-up">
-        {'Découvrez notre patrimoine'}
-      </h2>
-      <div className="img-container" data-aos="zoom-in">
-        {images.map((image, index) => (
-          <div
-            key={index}
-            className={`carousel-image ${index === currentImageIndex ? 'active' : ''}`}
-            style={{ backgroundImage: `url(${image})` }}
-            onClick={() => handleImageClick(image)}
-          ></div>
-        ))}
-      </div>
+      <h1 className="biens-title">L'immobière de Julia, une grand famille</h1>
+
 
       {zoomedImage && (
         <div className="zoom-overlay" onClick={closeZoom}>

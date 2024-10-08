@@ -50,7 +50,8 @@ const Forsale = () => {
       </div>
 
       <div className="map-container">
-        <h2>Localisation des biens</h2>
+      <h1 className="biens-title">Localisation des biens</h1>
+
         <MapContainer center={[48.6844, 2.4441]} zoom={8} className="biens-map">
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

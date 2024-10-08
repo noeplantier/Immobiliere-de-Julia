@@ -58,9 +58,8 @@ function ContactForm() {
         <div className="form">
           <Container maxWidth="sm">
             <Box component="form" onSubmit={handleSubmit} sx={{ mt: 3, mb: 4, pt: 4 }}>
-              <Typography variant="h3" fontFamily={'Times New Roman'} gutterBottom>
-                Contactez-nous
-              </Typography>
+            <h1 className="biens-title">Contactez-nous</h1>
+
               <TextField
                 fullWidth
                 margin="normal"

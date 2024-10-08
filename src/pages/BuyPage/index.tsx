@@ -68,9 +68,7 @@ function BuyPage() {
         <div className="form">
           <Container maxWidth="sm">
             <Box component="form" onSubmit={handleSubmit} sx={{ mt: 3, mb: 4, pt: 4 }}>
-              <Typography variant="h3" fontFamily={'Times New Roman'} gutterBottom>
-                Acheter un bien 
-              </Typography>
+            <h1 className="biens-title">Acheter un bien</h1>
               <TextField
                 fullWidth
                 margin="normal"

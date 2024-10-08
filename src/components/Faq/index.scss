@@ -9,6 +9,7 @@
   margin-top: -5rem ;
   margin-bottom: 2rem;
   padding-top: 10%;
+  
 }
 
 .faq-subtitle {
@@ -17,33 +18,27 @@
   margin-bottom: 20px;
 }
 
-.MuiAccordion-root {
+.MuiAccordion-root {  
+  background-image: url('https://img.freepik.com/photos-gratuite/fond-texture-abstrait_1258-30504.jpg?t=st=1728417349~exp=1728420949~hmac=6fd38697906a38a18c51f32477c10d5aaa2189016cde4fd015a3a2ed6e5869f7&w=740');
   display: flexbox;
   justify-content: center;
   width: 170vh;
   height: auto;
   border: none;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 
-
-  
-
-  
 }
 
 .MuiAccordionSummary-root {
   font-family: "Times New Roman", Times, serif;  
   font-size: 3rem;
-  background-color: #00274d;
-  color: white;
 
 
   &:hover {
-    background-color:#266de7;
+    background-image: url('https://img.freepik.com/photos-gratuite/fond-texture-abstrait_1258-30515.jpg?t=st=1728417372~exp=1728420972~hmac=39d9479bb00c90e5addffb345d015ac654323012c22582f5891034d990b35a09&w=740');
+
   }
 
   .MuiAccordionSummary-expandIcon {
-    color: white;
   }
 }
 

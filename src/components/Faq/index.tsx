@@ -14,8 +14,9 @@ import Splitter from '../Splitter';
 const Accordion = styled((props: AccordionProps) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
-  border: `1px solid ${theme.palette.divider}`,
-  margin: '0 2rem 0 2rem',
+  border: `3px solid ${theme.palette.divider}`,
+  paddingLeft: '1rem',
+  marginLeft: ' 15rem',
   '&:not(:last-child)': {
     borderBottom: 0,
   },
@@ -26,7 +27,7 @@ const Accordion = styled((props: AccordionProps) => (
 
 const AccordionSummary = styled((props: AccordionSummaryProps) => (
   <MuiAccordionSummary
-    expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '1.5rem' }} />}
+    expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '1rem' }} />}
     {...props}
   />
 ))(({ theme }) => ({
@@ -40,7 +41,7 @@ const AccordionSummary = styled((props: AccordionSummaryProps) => (
   },
   '& .MuiAccordionSummary-content': {
     marginLeft: theme.spacing(2),
-    fontSize: '1.25rem', 
+    fontSize: '2rem', 
     fontFamily:'Times New Roman',
 
   },
@@ -49,7 +50,7 @@ const AccordionSummary = styled((props: AccordionSummaryProps) => (
 const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   padding: theme.spacing(2),
   borderTop: '1px solid rgba(0, 0, 0, .125)',
-  fontSize: '1.1rem', 
+  fontSize: '2rem', 
   fontFamily:'Times New Roman',
 }));
 
@@ -64,7 +65,6 @@ const QuestionContainer = styled('div')({
 });
 
 const TeamQuestionContainer = styled('div')({
-  backgroundColor: '#ffffff',
   padding: '2.5rem',
   borderRadius: '8px',
   margin: '2rem 2rem 0 2rem',
@@ -84,7 +84,6 @@ const QuestionTitle = styled(Typography)({
 const Textarea = styled('textarea')({
   width: '100%',
   minHeight: '150px',
-  padding: '1.25rem',
   borderRadius: '4px',
   border: '1px solid #ccc',
   fontSize: '1.1rem',
@@ -106,16 +105,15 @@ export default function CustomizedAccordions() {
 
   return (
     <div className="container">
-     
-    
-      <h2 className="faq-title">Questions les plus fréquentes</h2>
+     <h1 className="biens-title">Questions les plus fréquentes</h1>
+
 
       <QuestionContainer >
         <Accordion onChange={handleChange('panel1')}>
           <AccordionSummary
             aria-controls="panel1d-content"
             id="panel1d-header"
-            color="black"
+            color="white"
           >
             <Typography> Quels sont les avantages d'acheter un bien immobilier en Bretagne ? </Typography>
           </AccordionSummary>
@@ -164,7 +162,7 @@ export default function CustomizedAccordions() {
           <AccordionSummary
             aria-controls="panel1d-content"
             id="panel1d-header"
-            color="black"
+            color="white"
           >
             <Typography>Quels types de biens proposez-vous à la vente ?</Typography>
           </AccordionSummary>
