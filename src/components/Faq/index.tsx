@@ -102,21 +102,7 @@ export default function CustomizedAccordions() {
       setExpanded(newExpanded ? panel : false);
     };
 
-  const handleQuestionSubmit = () => {
-    const teamMembers = [
-      'Noé Plantier',
-      'Julie Gondard',
-    ];
 
-    // Choisir un membre de l'équipe au hasard
-    const randomMember =
-      teamMembers[Math.floor(Math.random() * teamMembers.length)];
-
-    // Envoyer la question à l'utilisateur sélectionné
-    alert(`Votre question a été envoyée à ${randomMember}.`);
-
-    setUserQuestion('');
-  };
 
   return (
     <div className="container">

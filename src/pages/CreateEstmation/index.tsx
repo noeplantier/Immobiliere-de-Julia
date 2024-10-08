@@ -146,26 +146,7 @@ function CreateEstimation() {
       METHODS: 'POST',
     };
 
-    const requestBody = {
-      title,
-      description,
-      start_date: startDate,
-      start_hour: `${startTime}:00`,
-      finish_date: endDate,
-      address,
-      //TODO : utiliser les coordonnées à jour dans le state
-      location: coordsArray.map((coord) => parseFloat(coord)),
-      price: Number(price),
-      privacy_type: confidentiality,
-      picture: image,
-      max_attendee: Number(maxParticipants),
-      status,
-      pmr_access: accessibilityPMR,
-      zip_code_city: city,
-      user_id: userId,
-    };
-    console.log('Data Submitted:', requestBody);
-    console.log(`header: ${headers}`);
+      console.log(`header: ${headers}`);
 
     const fetchData = async () => {
       try {

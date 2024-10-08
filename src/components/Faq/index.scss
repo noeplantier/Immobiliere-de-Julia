@@ -1,6 +1,5 @@
 .container {
   padding: 2rem;
-  margin-left: 10rem;
   font-family:'Times New Roman', Times, serif;
 
 }
@@ -33,6 +32,8 @@
 }
 
 .MuiAccordionSummary-root {
+  margin-right: 50rem;
+
   font-family: "Times New Roman", Times, serif;  
   font-size: 2rem;
   background-color: #00274d;
@@ -48,15 +49,4 @@
   }
 }
 
-.MuiAccordionDetails-root {
-  width: 150vh;
-  font-family: "Times New Roman", Times, serif;  
-  font-size: 2rem;
-  background-color: #fff;
-  color: #000000;
-  border-top: 1px solid #f0f0f0;
-  padding: 1rem 2rem;
-  text-align: left;
-  line-height: 2;
-}
 

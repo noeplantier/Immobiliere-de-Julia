@@ -8,7 +8,7 @@ import {
 } from '@mui/material';
 import './index.scss';
 
-function RentPage() {
+function SalePage() {
   const [surname, setSurname] = useState('');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -69,7 +69,7 @@ function RentPage() {
           <Container maxWidth="sm">
             <Box component="form" onSubmit={handleSubmit} sx={{ mt: 3, mb: 4, pt: 4 }}>
               <Typography variant="h3" fontFamily={'Times New Roman'} gutterBottom>
-                Louer un bien 
+                Vendre un bien 
               </Typography>
               <TextField
                 fullWidth
@@ -147,4 +147,4 @@ function RentPage() {
   );
 }
 
-export default RentPage;
+export default SalePage;

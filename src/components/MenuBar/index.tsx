@@ -15,7 +15,7 @@ function MenuBar() {
         Acheter
       </Link>
       <Link to="/rent" className="menu-link">
-        Louer
+        Vendre
       </Link>
          <Link to="/contacts" className="menu-link">
          Contacts

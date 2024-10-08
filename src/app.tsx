@@ -14,7 +14,7 @@ import MenuBar from './components/MenuBar';
 import RegisterForm from './components/RegisterForm';
 import ConnexionForm from './components/ConnexionForm';
 import BuyPage from './pages/BuyPage';
-import RentPage from './pages/RentPage';
+import SalePage from './pages/SalePage';
 import CreateEstimation from './pages/CreateEstmation';
 import Forsale from './pages/ForSale';
 import ContactForm from './components/ContactsForm/ContactsForm';
@@ -41,7 +41,7 @@ function App() {
               <Route path="/faq" element={<Faq />} />
               <Route path="/mentions-legales" element={<LegalNotices />} />
               <Route path="/buy" element={<BuyPage />} />
-              <Route path="/rent" element={<RentPage />} />
+              <Route path="/rent" element={<SalePage />} />
               <Route path="/contacts" element={<ContactForm />} />
               <Route
                 path="/user/me"
