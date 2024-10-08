@@ -2,17 +2,17 @@
 
 .container {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-margin-right: 30rem;
+  margin: 0%;
+  padding: 0%;
 
 }
 
 .form {
-  background-color: #fff;
   border-radius: 12px;
   width: 100%;
-  margin-right: 55rem;
+  margin-right: 30rem;
+
 }
