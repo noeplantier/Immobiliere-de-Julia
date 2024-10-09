@@ -51,7 +51,7 @@ function ChatbotComponent () {
         <div className="chatbot">
           <div className="chatbot-header">
             <Image className="immo-logo" src={"/public/immo-logo.jpeg"}></Image>
-            <h2>Maël, votre assistant intelligent</h2>
+            <h2>Paul, votre assistant intelligent</h2>
             <button onClick={() => setIsOpen(false)}>x</button> 
           </div>
           <div className="chatbot-messages">

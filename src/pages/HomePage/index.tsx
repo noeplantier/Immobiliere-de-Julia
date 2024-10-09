@@ -28,31 +28,10 @@ function HomePage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [zoomedImage, setZoomedImage] = useState<string | null>(null);
 
-  const images = [
-    'src/assets/Le-moulin-a-maree-du-Birlot.jpg',
-    'src/assets/vue-de-la-ville-historique-dinan-avec-rivière-rance-département-cotes-d-armor-bretagne-france-du-nord-ouest-139921599.jpg.webp',
-    'src/assets/phare.jpg',
-    'src/assets/village-breton.jpg',
-    'src/assets/instinct-voyageurs-road-trip-en-bretagne-720x480.jpg',
-  ];
+
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 1500);
-
-    return () => clearInterval(interval);
-  }, [images.length]);
-
-  useEffect(() => {
-    AOS.init({
-      duration: 1200,
-      once: true,
-      mirror: false,
-    });
-  }, []);
 
   const getlocation = useCallback(() => {
     navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
@@ -183,7 +162,10 @@ function HomePage() {
       
 
       <h1 className="biens-title">L'immobière de Julia, une grand famille</h1>
-
+      <img className="brittany-sky"
+          src="src/assets/famille-immo.webp"
+          alt="brittany-sky"
+        />
 
       {zoomedImage && (
         <div className="zoom-overlay" onClick={closeZoom}>
