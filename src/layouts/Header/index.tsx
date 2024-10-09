@@ -47,11 +47,11 @@ function Header() {
     <>
       <header className="header">
         <h1 className="header_title">L'immobilière de Julia</h1>
-        <div className="header_logo_immo_julia">
-          <Link to="/">
-            <img src={logo} alt="O'Party Logo" />
-          </Link>
-        </div>
+        <img src='src/assets/immo-logo.jpeg'
+        alt="Logo ChatBot"
+        className="chatbot-logo"
+ 
+      />
         <Box className="header_buttons">
           {context.user?.first_name ? (
             <>

@@ -13,10 +13,9 @@
     border-radius: 12px;
     width: 100%;
     max-width: 600px; 
-    padding: 2rem; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
-    margin-bottom: 2rem; 
-    margin-top: 2rem; 
+    margin-bottom: -1rem; 
+    margin-top: -1rem; 
     margin-left: 26rem;
 
   }
@@ -24,6 +23,12 @@
   .background_bg {
     background-color: #f5f5f5;
     padding: 3rem 0;
+  }
+
+  .biens-title{
+margin-top: -2rem;
+
+
   }
   
   button {

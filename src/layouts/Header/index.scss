@@ -8,22 +8,25 @@
 .header {
   width: 100%;
   max-height: 25vh;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-image: url('https://img.freepik.com/photos-gratuite/fond-texture-abstrait_1258-30515.jpg?t=st=1728417372~exp=1728420972~hmac=39d9479bb00c90e5addffb345d015ac654323012c22582f5891034d990b35a09&w=740');
   position: relative;
 
-  .header_logo_immo_julia {
-    align-items: start;
-    margin-bottom: 2rem;
-    margin-top: 2rem;
-    width: 25vh;
-    padding-left: 1rem;
-    background-color: transparent;
-    height: auto;
-    animation: opacity 1s ease;
-    transition: transform 0.3s ease;
+  .chatbot-logo {
+    position: static;
+    top: 2rem;
+    left: 2rem;
+    width: 7rem;
+    height: 7rem;
+    cursor: pointer;
+    z-index: 1000;
+    border-radius: 50%;
+    border: 2px solid white;
+  
     
    
     &:hover {
