@@ -107,7 +107,7 @@ function ConnexionForm({
         >
           <IconButton
             onClick={onClose}
-            sx={{ alignSelf: 'flex-end', marginBottom: 1 }}
+            sx={{ alignSelf: 'flex-end', marginBottom: 7 }}
           >
             <CloseIcon />
           </IconButton>

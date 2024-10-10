@@ -4,44 +4,25 @@ import {
   Typography,
   Box,
   IconButton,
-  Menu,
-  MenuItem,
 } from '@mui/material';
 import {
-  Linkedin,
-  Facebook,
-  Twitter,
-  Instagram,
-  Translate,
   LinkedIn,
+  Twitter,
+  Facebook,
+  Instagram,
 } from '@mui/icons-material';
-import { useTranslation } from 'react-i18next';
 import './index.scss';
 
 function Footer() {
-  const { t, i18n } = useTranslation();
-  const [anchorEl, setAnchorEl] = React.useState(null);
-
-  const handleOpenMenu = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleCloseMenu = () => {
-    setAnchorEl(null);
-  };
-
-  const handleTranslate = (language) => {
-    i18n.changeLanguage(language); // Change la langue
-    handleCloseMenu();
-  };
-
   return (
     <Box
       component="footer"
       sx={{
-        width: '100%',
-        height: '150px',
-        backgroundColor: '#266de7',
+        width: '210vh',
+        height: '40vh',
+        backgroundImage: 'url(https://img.freepik.com/photos-gratuite/fond-texture-abstrait_1258-30515.jpg?t=st=1728417372~exp=1728420972~hmac=39d9479bb00c90e5addffb345d015ac654323012c22582f5891034d990b35a09&w=740)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
@@ -50,20 +31,6 @@ function Footer() {
       }}
     >
       <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-        <IconButton onClick={handleOpenMenu} sx={{ color: 'white' }}>
-          <Translate />
-        </IconButton>
-        <Menu
-          anchorEl={anchorEl}
-          open={Boolean(anchorEl)}
-          onClose={handleCloseMenu}
-        >
-          <MenuItem onClick={() => handleTranslate('fr')}>Français</MenuItem>
-          <MenuItem onClick={() => handleTranslate('en')}>Anglais</MenuItem>
-          <MenuItem onClick={() => handleTranslate('en')}>Espagnol</MenuItem>
-          <MenuItem onClick={() => handleTranslate('en')}>Chinois</MenuItem>
-        </Menu>
-
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <IconButton href="https://linkedin.com" sx={{ color: 'white' }}>
             <LinkedIn />
@@ -71,16 +38,10 @@ function Footer() {
           <IconButton href="https://twitter.com" sx={{ color: 'white' }}>
             <Twitter />
           </IconButton>
-          <IconButton
-            href="https://facebook.com"
-            sx={{ color: 'white' }}
-          >
+          <IconButton href="https://facebook.com" sx={{ color: 'white' }}>
             <Facebook />
           </IconButton>
-          <IconButton
-            href="https://instagram.com"
-            sx={{ color: 'white' }}
-          >
+          <IconButton href="https://instagram.com" sx={{ color: 'white' }}>
             <Instagram />
           </IconButton>
         </Box>

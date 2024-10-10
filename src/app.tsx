@@ -10,7 +10,6 @@ import LegalNotices from './components/LegalNotices';
 import Faq from './components/Faq';
 import GlobalContext from './context/GlobalContext';
 import CreateEvent from './pages/CreateEstmation';
-import MenuBar from './components/MenuBar';
 import RegisterForm from './components/RegisterForm';
 import ConnexionForm from './components/ConnexionForm';
 import BuyPage from './pages/BuyPage';
@@ -30,7 +29,6 @@ function App() {
       <div className="App" style={{ maxWidth: '100vw' }}>
         <GlobalContext.Provider value={value}>
           <Header />
-          <MenuBar /> 
           <main>
             <Routes>
               <Route path="/" element={<HomePage />} />

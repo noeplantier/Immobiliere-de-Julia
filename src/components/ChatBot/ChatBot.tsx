@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import './ChatBot.scss';
-import logo from '../../assets/immo-logo.jpeg'; // Importation du logo
+import logo from '../../assets/immo-logo.jpeg'; 
 import { Image } from '@mui/icons-material';
+import IconButton from '@mui/material/IconButton';
+
 
 function ChatbotComponent () {
   const [messages, setMessages] = useState<{user: string, bot: string}[]>([]);
   const [input, setInput] = useState('');
-  const [isOpen, setIsOpen] = useState(false); // Pour gérer l'ouverture/fermeture du ChatBot
+  const [isOpen, setIsOpen] = useState(false); 
 
   const handleSendMessage = async () => {
     if (input.trim()) {
@@ -52,7 +54,7 @@ function ChatbotComponent () {
           <div className="chatbot-header">
             <Image className="immo-logo" src={"/public/immo-logo.jpeg"}></Image>
             <h2>Paul, votre assistant intelligent</h2>
-            <button onClick={() => setIsOpen(false)}>x</button> 
+            <IconButton onClick={() => setIsOpen(false)}>x</IconButton> 
           </div>
           <div className="chatbot-messages">
             {messages.map((message, index) => (
@@ -66,7 +68,7 @@ function ChatbotComponent () {
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Posez une question..."
+            placeholder="Posez une question à Paul."
           />
           <button onClick={handleSendMessage}>Envoyer</button>
         </div>
