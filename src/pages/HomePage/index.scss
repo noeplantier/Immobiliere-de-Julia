@@ -88,12 +88,20 @@
   background-color: #ddd;
 }
 
-.brittany-sky{
-width: 550vh;
-height: 90vh;
-left:0;
-right: 0;
+.brittany-sky {
+  width: 100vw; /* Prend toute la largeur de la fenêtre */
+  height: auto; /* Ajuste automatiquement la hauteur */
+  object-fit: cover; /* Remplit bien le cadre sans distorsion */
+  margin: 0; /* Élimine les marges */
+  transition: transform 0.3s ease; /* Ajoute une transition fluide pour l'effet de zoom */
+  position: relative;
 }
+
+/* Effet de zoom permanent */
+.brittany-sky {
+  transform: scale(1.05); /* Applique un zoom permanent */
+}
+
 
 .famille-immo{
   width: 550vh;

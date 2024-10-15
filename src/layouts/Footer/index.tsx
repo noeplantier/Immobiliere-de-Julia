@@ -18,7 +18,7 @@ function Footer() {
     <Box
       component="footer"
       sx={{
-        width: '210vh',
+        width: '201vh',
         height: '40vh',
         backgroundImage: 'url(https://st.depositphotos.com/2369859/3205/i/450/depositphotos_32055461-stock-photo-abstract-blue-background.jpg)',
         backgroundSize: 'cover',
