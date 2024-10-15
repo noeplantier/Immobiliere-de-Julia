@@ -19,8 +19,8 @@
 }
 
 .MuiAccordion-root {  
-  background-image: url('https://img.freepik.com/photos-gratuite/fond-texture-abstrait_1258-30504.jpg?t=st=1728417349~exp=1728420949~hmac=6fd38697906a38a18c51f32477c10d5aaa2189016cde4fd015a3a2ed6e5869f7&w=740');
-  display: flexbox;
+  background-image: url('https://st4.depositphotos.com/10259232/39420/i/600/depositphotos_394203078-stock-photo-abstract-gray-gradient-wall-background.jpg');
+  background-size: cover;  display: flexbox;
   justify-content: center;
   width: 170vh;
   height: auto;
@@ -34,8 +34,8 @@
 
 
   &:hover {
-    background-image: url('https://img.freepik.com/photos-gratuite/fond-texture-abstrait_1258-30515.jpg?t=st=1728417372~exp=1728420972~hmac=39d9479bb00c90e5addffb345d015ac654323012c22582f5891034d990b35a09&w=740');
-
+    background-image: url('https://st4.depositphotos.com/10259232/39420/i/600/depositphotos_394203078-stock-photo-abstract-gray-gradient-wall-background.jpg');
+    background-size: cover;
   }
 
   .MuiAccordionSummary-expandIcon {

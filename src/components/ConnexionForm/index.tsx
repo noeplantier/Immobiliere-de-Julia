@@ -12,7 +12,7 @@ import Container from '@mui/material/Container';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import GlobalContext from '../../context/GlobalContext';
 import accountServices from '../../_services/account.service';
 
@@ -47,41 +47,46 @@ function ConnexionForm({
 }: ConnexionFormProps) {
   const { user, setUser } = useContext(GlobalContext);
   const navigate = useNavigate();
+  const [error, setError] = useState<string | null>(null);
 
   const login = async (email: string, password: string) => {
     const API_URL = import.meta.env.VITE_API_URL;
     try {
       if (!email || !password) {
-        throw new Error('Erreur de connexion');
+        throw new Error('Veuillez fournir une adresse email et un mot de passe.');
       }
-      const header = {
-        'Content-Type': 'application/json',
-        method: 'POST',
-        credentials: 'include',
-      };
-      const body = { email, password };
 
       const response = await fetch(`${API_URL}login`, {
         method: 'POST',
-        headers: header,
-        body: JSON.stringify(body),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+        body: JSON.stringify({ email, password }),
       });
+
+      if (!response.ok) {
+        throw new Error('Email ou mot de passe incorrect.');
+      }
+
       const data = await response.json();
       const token = response.headers.get('Authorization') || data.token || '';
+
       if (token) {
         const tokenValue = token.split(' ')[1];
         console.log('Token:', tokenValue);
         sessionStorage.clear();
-        setUser({});
         setUser(data);
         accountServices.saveToken(token);
 
         navigate('/profile'); // Redirection vers la page de profil
       } else {
         console.error('En-tête Authorization non trouvé');
+        setError('Erreur de connexion. Veuillez réessayer.');
       }
     } catch (error) {
-      throw new Error('Erreur lors du fetch');
+      console.error(error);
+      setError('Erreur lors de la connexion. Veuillez vérifier vos informations.');
     }
   };
 
@@ -90,6 +95,7 @@ function ConnexionForm({
     const formData = new FormData(event.currentTarget);
     const email = formData.get('email') as string;
     const password = formData.get('password') as string;
+    setError(null); // Réinitialiser les erreurs avant de tenter une nouvelle connexion
     login(email, password);
   };
 
@@ -117,6 +123,11 @@ function ConnexionForm({
           <Typography component="h1" variant="h5">
             Connexion
           </Typography>
+          {error && (
+            <Typography color="error" variant="body2">
+              {error}
+            </Typography>
+          )}
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
             <TextField
               margin="normal"

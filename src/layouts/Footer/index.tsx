@@ -20,7 +20,7 @@ function Footer() {
       sx={{
         width: '210vh',
         height: '40vh',
-        backgroundImage: 'url(https://img.freepik.com/photos-gratuite/fond-texture-abstrait_1258-30515.jpg?t=st=1728417372~exp=1728420972~hmac=39d9479bb00c90e5addffb345d015ac654323012c22582f5891034d990b35a09&w=740)',
+        backgroundImage: 'url(https://st.depositphotos.com/2369859/3205/i/450/depositphotos_32055461-stock-photo-abstract-blue-background.jpg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         display: 'flex',
