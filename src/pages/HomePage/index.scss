@@ -23,6 +23,11 @@
   background-color: rgba(255, 255, 255, 0.079);
 }
 
+.biens-title{
+margin-top: 30rem;
+
+}
+
 [data-aos='zoom-in-up'] {
   opacity: 0;
   transform: scale(0.8);
@@ -147,23 +152,21 @@
 
 
 .create-event-button {
-  margin-top: 20%;
-  margin-bottom: 50%;
+  margin-bottom:10rem;
   padding: 10px 20px;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  color: white;
-  background:  #266de7;
-  border: none;
-  border-radius: 5px;
+  background: white;
+  color:  #266de7;
+  border: 2px solid #266de7;
   cursor: pointer;
   transition:
     background-color 0.3s,
     transform 0.3s;
 
   &:hover {
-    background:  #266de7;
-    transform: scale(1.05);
+    background-image: url('https://st.depositphotos.com/2369859/3205/i/450/depositphotos_32055461-stock-photo-abstract-blue-background.jpg');
+    transform: scale(1.0);
   }
 }
 
@@ -186,4 +189,65 @@
   max-height: 90%;
   transition: transform 0.3s ease;
   transform: scale(1.1);
+}
+
+.search-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-options {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.search-option {
+  padding: 10px 20px;
+  background-color: #e0e0e0;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.search-option:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.search-title {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.dropdowns {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dropdown {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.search-button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
 }

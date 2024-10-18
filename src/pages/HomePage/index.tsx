@@ -28,10 +28,7 @@ function HomePage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [zoomedImage, setZoomedImage] = useState<string | null>(null);
 
-
-
   const navigate = useNavigate();
-
 
   const getlocation = useCallback(() => {
     navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
@@ -136,6 +133,11 @@ function HomePage() {
     setZoomedImage(null);
   };
 
+  const handleSearch = () => {
+    // Ajouter la logique pour la recherche de biens immobiliers ici
+    console.log("Recherche de biens immobiliers lancée");
+  };
+
   return (
     <div className="homepage">
       <CookiePopup data-aos="zoom-in-up" />
@@ -148,34 +150,38 @@ function HomePage() {
         
       <div className="hero-img-container">
         <ChatBot/>
-        
-        
-      </div>
-      <div>
-        <button
-          className="create-event-button"
-          onClick={handleCreateEventClick}
-        >
-          {'Faites estimer votre bien'}
-        </button>
       </div>
       
-
-      <h1 className="biens-title">L'immobière de Julia, une grand famille</h1>
-      <img className="brittany-sky"
-          src="src/assets/famille-immo.webp"
-          alt="brittany-sky"
-        />
-
-      {zoomedImage && (
-        <div className="zoom-overlay" onClick={closeZoom}>
-          <img src={zoomedImage} alt="Zoomed" className="zoomed-image" />
+      <div className="search-form">
+        <div className="search-options">
+          <button className="search-option">Acheter</button>
+          <button className="search-option">Louer</button>
+          <button className="search-option">Estimer</button>
         </div>
-      )}
+        <h2 className="search-title">Ma recherche</h2>
+        <div className="dropdowns">
+          <select className="dropdown">
+            <option>Localisation</option>
+            {/* Ajouter options API */}
+          </select>
+          <select className="dropdown">
+            <option>Type de bien</option>
+            {/* Ajouter options API */}
+          </select>
+          <select className="dropdown">
+            <option>Budget</option>
+            {/* Ajouter options API */}
+          </select>
+          <select className="dropdown">
+            <option>Nombre de pièces</option>
+            {/* Ajouter options API */}
+          </select>
+        </div>
+        <button className="search-button" onClick={handleSearch}>Rechercher</button>
+      </div>
 
       <Splitter />
       <Faq data-aos="zoom-in" />
-     
     </div>
   );
 }

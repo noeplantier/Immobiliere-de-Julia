@@ -52,7 +52,7 @@ function ChatbotComponent () {
       {isOpen && (
         <div className="chatbot">
           <div className="chatbot-header">
-            <Image className="immo-logo" src={"/public/immo-logo.jpeg"}></Image>
+            <Image className="immo-logo" src="/public/immo-logo.jpeg"></Image>
             <h2>Paul, votre assistant intelligent</h2>
             <IconButton onClick={() => setIsOpen(false)}>x</IconButton> 
           </div>
