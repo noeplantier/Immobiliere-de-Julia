@@ -17,21 +17,16 @@
   background-size: cover;
 
   .chatbot-logo {
-    position: static;
+    position: sticky;
     top: 2rem;
     left: 2rem;
     width: 7rem;
     height: 7rem;
     cursor: pointer;
-    z-index: 1000;
     border-radius: 50%;
     border: 2px solid white;
   
-    
-   
-    &:hover {
-      transform: scale(1.1);
-    }
+
 
     img {
       width: 100%;
@@ -52,14 +47,11 @@
     button {
       font-family: 'Times New Roman';
       font-size: 0.7rem;
-      background: ffffff(240, 130, 148);
       color: #ffffff;
       animation: opacity 1s ease;
       transition: transform 0.3s ease;
 
-      &:hover {
-        transform: scale(1.1);
-      }
+   
     }
   }
   .menu-bar {
@@ -82,7 +74,7 @@
     }
 
   .header_title {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     position: absolute;
     top: 0rem;
     left: 50%;

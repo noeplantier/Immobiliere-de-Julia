@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './ChatBot.scss';
-import logo from '../../assets/immo-logo.jpeg'; 
 import { Image } from '@mui/icons-material';
 import IconButton from '@mui/material/IconButton';
 
