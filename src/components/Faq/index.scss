@@ -8,7 +8,6 @@
   text-align: center;
   margin-top: -5rem ;
   margin-bottom: 2rem;
-  padding-top: 10%;
   
 }
 
@@ -20,17 +19,20 @@
 
 .MuiAccordion-root {  
   background-image: url('https://st4.depositphotos.com/10259232/39420/i/600/depositphotos_394203078-stock-photo-abstract-gray-gradient-wall-background.jpg');
-  background-size: cover;  display: flexbox;
+  background-size: cover; 
   justify-content: center;
-  width: 170vh;
+  width: 100vh;
   height: auto;
-  border: none;
+  padding-left:-20rem;
+  padding-right:-20rem;
+
 
 }
 
 .MuiAccordionSummary-root {
   font-family: "Times New Roman", Times, serif;  
   font-size: 3rem;
+  justify-content: center;
 
 
   &:hover {
@@ -38,8 +40,7 @@
     background-size: cover;
   }
 
-  .MuiAccordionSummary-expandIcon {
-  }
+  
 }
 
 

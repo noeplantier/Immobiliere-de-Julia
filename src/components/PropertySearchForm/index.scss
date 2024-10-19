@@ -12,14 +12,15 @@
 
 .search-option {
   padding: 10px 20px;
-  background-color: #e0e0e0;
+  background-image: url('https://st.depositphotos.com/2369859/3205/i/450/depositphotos_32055461-stock-photo-abstract-blue-background.jpg');
   cursor: pointer;
   border-radius: 4px;
+  color: #fff;
   transition: background-color 0.3s ease;
 }
 
 .search-option:hover {
-  background-color: #007bff;
+  background-image: url('https://st.depositphotos.com/2369859/3205/i/450/depositphotos_32055461-stock-photo-abstract-blue-background.jpg');
   color: #fff;
 }
 
@@ -45,7 +46,7 @@
   display: block;
   width: 100%;
   padding: 12px;
-  background-color: #007bff;
+  background-image: url('https://st.depositphotos.com/2369859/3205/i/450/depositphotos_32055461-stock-photo-abstract-blue-background.jpg');
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -55,5 +56,5 @@
 }
 
 .search-button:hover {
-  background-color: #0056b3;
+  background-image: url('https://st.depositphotos.com/2369859/3205/i/450/depositphotos_32055461-stock-photo-abstract-blue-background.jpg');
 }
