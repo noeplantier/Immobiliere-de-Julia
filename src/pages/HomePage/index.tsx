@@ -17,7 +17,7 @@ import ChatBot from '../../components/ChatBot/ChatBot';
 import PropertySearchForm from '../../components/PropertySearchForm';
 
 function HomePage() {
-  const { t } = useTranslation(); // Hook pour la traduction
+  const { t } = useTranslation();
   const API_URL = import.meta.env.VITE_API_URL;
   const [listEvents, setListEvents] = useState<Event[]>([]);
   const [userLocation, setUserLocation] = useState({
@@ -135,27 +135,36 @@ function HomePage() {
   };
 
   const handleSearch = () => {
-    // Ajouter la logique pour la recherche de biens immobiliers ici
     console.log("Recherche de biens immobiliers lancée");
   };
 
   return (
     <div className="homepage">
       <CookiePopup data-aos="zoom-in-up" />
-      <PropertySearchForm/>
-      <img className="brittany-sky"
+      
+      <div className="hero-container">
+        <img
+          className="brittany-sky"
           src="src/assets/brittany-sky.jpeg"
           alt="brittany-sky"
         />
+        <PropertySearchForm />
+      </div>
+      
       <h1 className="biens-title">Découvrez notre univers</h1>
-      <h2>Forte de son engagement envers ses clients et de sa connaissance approfondie du marché, **L'Immobilière de Julia** accompagne les particuliers et les professionnels dans leurs projets, qu'ils soient à la recherche d'une résidence principale, d'une propriété de vacances ou d'investissements locatifs. Avec une approche personnalisée, Armel Moizant et son équipe mettent un point d'honneur à offrir un service de qualité, basé sur l'écoute, la transparence et la confiance.</h2>
-        
+      <h2>
+        Forte de son engagement envers ses clients et de sa connaissance approfondie du marché, 
+        <strong>L'Immobilière de Julia</strong> accompagne les particuliers et les professionnels dans leurs projets, 
+        qu'ils soient à la recherche d'une résidence principale, d'une propriété de vacances ou d'investissements locatifs. 
+        Avec une approche personnalisée, Armel Moizant et son équipe mettent un point d'honneur à offrir un service de qualité, 
+        basé sur l'écoute, la transparence et la confiance.
+      </h2>
+          
       <div className="hero-img-container">
-        <ChatBot/>
-    
-      <Splitter />
-      <Faq data-aos="zoom-in" />
-    </div>
+        <ChatBot />
+        <Splitter />
+        <Faq data-aos="zoom-in" />
+      </div>
     </div>
   );
 }

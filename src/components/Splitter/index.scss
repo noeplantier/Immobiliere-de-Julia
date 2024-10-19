@@ -1,9 +1,10 @@
 .splitter {
-  width: 90vh;
-  margin: 1rem auto 1rem auto;
+  margin-bottom: 7rem;
+  margin-top: 7rem;
+  justify-content: center;
+  width: 195vh;
   height: 1px;
   background-color: rgba(114, 114, 114, 0.462);
   border-radius: 10px;
   animation: wave;
-  margin: 8%;
 }
