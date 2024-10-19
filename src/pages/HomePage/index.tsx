@@ -14,6 +14,7 @@ import 'aos/dist/aos.css';
 import './index.scss';
 import ContactForm from '../../components/ContactsForm/ContactsForm';
 import ChatBot from '../../components/ChatBot/ChatBot';
+import PropertySearchForm from '../../components/PropertySearchForm';
 
 function HomePage() {
   const { t } = useTranslation(); // Hook pour la traduction
@@ -141,6 +142,7 @@ function HomePage() {
   return (
     <div className="homepage">
       <CookiePopup data-aos="zoom-in-up" />
+      <PropertySearchForm/>
       <img className="brittany-sky"
           src="src/assets/brittany-sky.jpeg"
           alt="brittany-sky"
@@ -150,38 +152,10 @@ function HomePage() {
         
       <div className="hero-img-container">
         <ChatBot/>
-      </div>
-      
-      <div className="search-form">
-        <div className="search-options">
-          <button className="search-option">Acheter</button>
-          <button className="search-option">Louer</button>
-          <button className="search-option">Estimer</button>
-        </div>
-        <h2 className="search-title">Ma recherche</h2>
-        <div className="dropdowns">
-          <select className="dropdown">
-            <option>Localisation</option>
-            {/* Ajouter options API */}
-          </select>
-          <select className="dropdown">
-            <option>Type de bien</option>
-            {/* Ajouter options API */}
-          </select>
-          <select className="dropdown">
-            <option>Budget</option>
-            {/* Ajouter options API */}
-          </select>
-          <select className="dropdown">
-            <option>Nombre de pièces</option>
-            {/* Ajouter options API */}
-          </select>
-        </div>
-        <button className="search-button" onClick={handleSearch}>Rechercher</button>
-      </div>
-
+    
       <Splitter />
       <Faq data-aos="zoom-in" />
+    </div>
     </div>
   );
 }
