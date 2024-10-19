@@ -68,7 +68,6 @@ const TeamQuestionContainer = styled('div')({
   padding: '2.5rem',
   borderRadius: '8px',
   margin: '2rem 2rem 0 2rem',
-  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
   fontFamily:'Times New Roman',
 
 });
@@ -85,7 +84,6 @@ const Textarea = styled('textarea')({
   width: '100%',
   minHeight: '150px',
   borderRadius: '4px',
-  border: '1px solid #ccc',
   fontSize: '1.1rem',
   resize: 'vertical',
   fontFamily:'Times New Roman',

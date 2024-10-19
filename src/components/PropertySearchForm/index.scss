@@ -17,11 +17,11 @@
   border-radius: 4px;
   color: #fff;
   transition: background-color 0.3s ease;
-}
+  transition: background-color 0.5s ease;
 
-.search-option:hover {
-  background-image: url('https://st.depositphotos.com/2369859/3205/i/450/depositphotos_32055461-stock-photo-abstract-blue-background.jpg');
-  color: #fff;
+&:hover {
+  background: rgb(104, 103, 103);
+}
 }
 
 .search-title {
@@ -52,9 +52,9 @@
   border-radius: 4px;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+  transition: background-color 0.5s ease;
 
-.search-button:hover {
-  background-image: url('https://st.depositphotos.com/2369859/3205/i/450/depositphotos_32055461-stock-photo-abstract-blue-background.jpg');
+&:hover {
+  background: rgb(104, 103, 103);
+}
 }

@@ -14,7 +14,7 @@
     text-align: center;
     font-size: 4rem;
     margin-bottom: 3rem;
-    color: #acaaaa;
+    color: #ffffff;
   }
   
   .biens-list {
@@ -26,7 +26,8 @@
   
   .bien-card {
     text-align: left;
-    background-color: #acaaaa;
+   background-color:#d5d1d1;
+
     padding: 1.5rem;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
@@ -34,7 +35,6 @@
     display: flex;
     flex-direction: column;
     margin-left: 20rem;
-    color: #2c3e50;
 
     transition: transform 0.2s ease-in-out;
 

@@ -1,5 +1,8 @@
 .container {
-  display: flex;
+ background-image: url('https://st3.depositphotos.com/19975938/36059/v/600/depositphotos_360592866-stock-illustration-gray-background-abstract-gradient-illustration.jpg'); 
+  background-size: cover;
+  background-repeat: no-repeat;
+ display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -10,8 +13,9 @@
 }
 
 .form {
-  background-color:#acaaaa;
+  background-color:#d5d1d1;
   border-radius: 12px;
+  border: 1px solid #b2b1b1;
   width: 100%;
   max-width: 600px; 
   padding: 2rem; 
@@ -19,13 +23,17 @@
   margin-bottom: 2rem; 
   margin-top: 2rem; 
   margin-left: 26rem;
+transition: transform 0.2s ease-in-out;
 
+&:hover {
+  transform: scale(1.03);
+}
 }
 
 .background_bg {
   background-image: url('https://st4.depositphotos.com/10259232/39420/i/600/depositphotos_394203078-stock-photo-abstract-gray-gradient-wall-background.jpg');
   background-size: cover;
-    padding: 3rem 0;
+  padding: 3rem 0;
   background-position:center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -45,9 +53,8 @@ select {
 }
 
 h1{
-
   text-align: center;
   font-size: 4rem;
   margin-bottom: 3rem;
-  color: #acaaaa;
+  color: #ffffff;
 }

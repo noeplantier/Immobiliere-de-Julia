@@ -105,7 +105,8 @@ function ConnexionForm({
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
+            marginBottom: 7,
+            marginTop: 3,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',

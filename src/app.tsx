@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './layouts/Header';
 import AuthGuard from './_helpers/AuthGuard';
 import HomePage from './pages/HomePage';
-import ProfilePage from './pages/ProfilePage';
 import ErrorPage from './pages/ErrorPage';
 import Footer from './layouts/Footer';
 import LegalNotices from './components/LegalNotices';
@@ -47,7 +46,6 @@ function App() {
                 path="/user/me"
                 element={
                   <AuthGuard>
-                    <ProfilePage />
                   </AuthGuard>
                 }
               />

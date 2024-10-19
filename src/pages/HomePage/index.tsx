@@ -15,6 +15,7 @@ import './index.scss';
 import ContactForm from '../../components/ContactsForm/ContactsForm';
 import ChatBot from '../../components/ChatBot/ChatBot';
 import PropertySearchForm from '../../components/PropertySearchForm';
+import Forsale from '../ForSale';
 
 function HomePage() {
   const { t } = useTranslation();
@@ -149,6 +150,7 @@ function HomePage() {
           alt="brittany-sky"
         />
         <PropertySearchForm />
+
       </div>
       
       <h1 className="biens-title">Découvrez notre univers</h1>
@@ -162,8 +164,11 @@ function HomePage() {
           
       <div className="hero-img-container">
         <ChatBot />
+  
         <Splitter />
-        <Faq data-aos="zoom-in" />
+        <Forsale/>
+        <Splitter />
+        <ContactForm/>
       </div>
     </div>
   );
