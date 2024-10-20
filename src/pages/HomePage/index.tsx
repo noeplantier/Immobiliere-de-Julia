@@ -47,41 +47,7 @@ function HomePage() {
     console.log('Erreur de géolocalisation :', error);
   }, []);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const { lat, lon } = userLocation;
-        if (!lat || !lon) throw new Error('Localisation non disponible.');
-
-        const response = await fetch(
-          `${API_URL}events?latitude=${lat}&longitude=${lon}`,
-          {
-            headers: {
-              'X-Content-Type-Options': 'nosniff',
-              'X-Frame-Options': 'DENY',
-              'Content-Type': 'application/json',
-            },
-          }
-        );
-
-        if (!response.ok)
-          throw new Error('Erreur lors de la récupération des événements.');
-
-        const data = await response.json();
-        setListEvents(data);
-      } catch (error) {
-        console.error('Erreur lors du fetch:', error);
-      }
-    };
-
-    if (navigator.geolocation) {
-      getlocation();
-    } else {
-      console.log("La géolocalisation n'est pas supportée par ce navigateur.");
-    }
-
-    fetchData();
-  }, [API_URL, userLocation, getlocation]);
+ 
 
   useEffect(() => {
     const handleScroll = () => {
@@ -101,39 +67,6 @@ function HomePage() {
     };
   }, []);
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-  };
-
-  const handleCreateEventClick = () => {
-    navigate('/create-event');
-  };
-
-  const handleImageClick = (image: string) => {
-    setZoomedImage(image);
-  };
-
-  const closeZoom = () => {
-    setZoomedImage(null);
-  };
 
   const handleSearch = () => {
     console.log("Recherche de biens immobiliers lancée");
@@ -156,8 +89,8 @@ function HomePage() {
       <h1 className="biens-title">Découvrez notre univers</h1>
       <h2>
         Forte de son engagement envers ses clients et de sa connaissance approfondie du marché, 
-        <strong>L'Immobilière de Julia</strong> accompagne les particuliers et les professionnels dans leurs projets, 
-        qu'ils soient à la recherche d'une résidence principale, d'une propriété de vacances ou d'investissements locatifs. 
+        <strong>l'Immobilière de Julia</strong> accompagne les particuliers et les professionnels dans leurs projets, 
+        qu'ils soient à la recherche d'une résidence principale, d'une propriété de vacances ou d'investissements locatifs.<br></br> 
         Avec une approche personnalisée, Armel Moizant et son équipe mettent un point d'honneur à offrir un service de qualité, 
         basé sur l'écoute, la transparence et la confiance.
       </h2>

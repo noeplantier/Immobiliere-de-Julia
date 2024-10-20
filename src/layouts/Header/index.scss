@@ -10,6 +10,8 @@
   height: 28vh;
   padding-bottom: 2rem;
   padding-top: 2rem;
+  position: relative; /* Assure que les enfants sont positionnés par rapport au header */
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -64,18 +66,38 @@
     justify-content: space-between;
     color: rgb(255, 255, 255);
     text-decoration: none;
+    left: 3rem;
     margin: 0 1rem;
     font-family: "Times New Roman", Times, serif;  
     font-size: 1.4rem;
     font-weight: bold;
     position: relative;
-
-
+    transition: color 0.3s ease; /* Pour adoucir le changement de couleur au survol */
+  
+    &:hover {
+      color: #ffffff; /* Assurez-vous que la couleur du texte reste blanche au survol */
     }
+  
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px; /* Ajustez la distance par rapport au texte */
+      width: 0;
+      height: 3px; /* Épaisseur du trait */
+      background-color: white; /* Couleur du trait */
+      transition: width 0.4s ease; /* Animation du trait */
+    }
+  
+    &:hover::after {
+      width: 100%; /* Le trait s'étend jusqu'à la largeur complète */
+    }
+  }
+  
 
   .header_title {
     margin-top: 1.5rem;
-    position: absolute;
+    position:absolute;
     top: 0rem;
     left: 50%;
     transform: translateX(-50%);
