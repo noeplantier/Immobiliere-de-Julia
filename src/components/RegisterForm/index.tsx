@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ReactSession } from 'react-client-session';
+import { useNavigate } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -11,29 +11,12 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import dayjs, { Dayjs } from 'dayjs';
-import { useNavigate } from 'react-router-dom';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import ImagePicker from '../ImagePicker';
 import DatePickerCpn from '../DatePicker/DatePicker';
-import 'react-datepicker/dist/react-datepicker.css';
 import './index.scss';
 
 const defaultTheme = createTheme();
-
-function Copyright(props) {
-  return (
-    <Typography
-      variant="body1"
-      color="grey"
-      align="center"
-      {...props}
-    >
-      {'Copyright © '}L'immobilière de Julia - {new Date().getFullYear()} . Tous droits
-      réservés.
-    </Typography>
-  );
-}
 
 type RegisterFormProps = {
   onClose: () => void;
@@ -51,9 +34,6 @@ function RegisterForm({
     dayjs('01/01/2000', 'DD/MM/YYYY')
   );
   const [errors, setErrors] = useState<string[]>([]);
-  const handleDateChange = (newDate: Dayjs | null) => {
-    setSelectedDate(newDate);
-  };
   const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -73,59 +53,30 @@ function RegisterForm({
     };
 
     try {
-      // Validation des données avec Zod
-      updateSchema.parse(formData);
-
-      const raw = JSON.stringify({
-        first_name: formData.first_name,
-        last_name: formData.last_name,
-        birth_date: formData.birth_date,
-        address: formData.address,
-        email: formData.email,
-        password: formData.password,
-        password_confirmation: formData.password_confirmation,
-        about: 'Nouveau ici',
-        profil_picture: formData.profile_picture,
-      });
-
-      // Envoi des données au serveur
-      const myHeaders = new Headers();
-      myHeaders.append('Content-Type', 'application/json');
-
-      const requestOptions = {
-        method: 'POST',
-        headers: myHeaders,
-        body: raw,
-      };
-
       const response = await fetch(
-        `${process.env.API_URL}register`,
-        requestOptions
+        `${import.meta.env.VITE_API_URL}register`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        }
       );
+
       const result = await response.json();
 
       if (response.ok) {
         console.log('Inscription réussie:', result);
-        navigate('/');
+        navigate('/'); // Redirection vers la page d'accueil ou profil après inscription réussie
       } else {
         console.error("Erreur lors de l'inscription:", result);
         setErrors([result.message || "Erreur lors de l'inscription"]);
       }
     } catch (error) {
-      if (error instanceof z.ZodError) {
-        const zodErrors = error.errors.map((err) => err.message);
-        setErrors(zodErrors);
-      } else {
-        setErrors([error.message]);
-      }
-      console.log(error);
+      console.error('Erreur lors de la requête:', error);
+      setErrors(['Une erreur est survenue lors de la soumission du formulaire.']);
     }
-  };
-
-  const toConnexionModal = () => {
-    onClose();
-    setIsConnexionModalOpen(true);
-    setIsRegisterModalOpen(false);
   };
 
   return (
@@ -167,8 +118,6 @@ function RegisterForm({
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextField
-                  InputProps={{ sx: { height: 54.9 } }}
-                  placeholder="Prénom"
                   autoComplete="given-name"
                   name="firstName"
                   required
@@ -188,10 +137,13 @@ function RegisterForm({
                   autoComplete="family-name"
                 />
               </Grid>
-              <Grid item xs={12} sm={6}>
-                <DatePickerCpn onDateChange={handleDateChange} />
+              <Grid item xs={12}>
+                <DatePickerCpn
+                  selectedDate={selectedDate}
+                  setSelectedDate={setSelectedDate}
+                />
               </Grid>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12}>
                 <TextField
                   required
                   fullWidth
@@ -206,19 +158,9 @@ function RegisterForm({
                   required
                   fullWidth
                   id="email"
-                  label="Adresse mail"
+                  label="Adresse Email"
                   name="email"
                   autoComplete="email"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  id="phone"
-                  label="Numéro de téléphone"
-                  name="phone"
-                  autoComplete="phone"
                 />
               </Grid>
               <Grid item xs={12}>
@@ -237,62 +179,30 @@ function RegisterForm({
                   required
                   fullWidth
                   name="password_confirmation"
-                  label="Confirmation mot de passe"
+                  label="Confirmer Mot de passe"
                   type="password"
                   id="password_confirmation"
                   autoComplete="new-password"
                 />
               </Grid>
-              <Grid
-                item
-                xs={12}
-                sx={{ display: 'flex', justifyContent: 'center' }}
-              >
-                <ImagePicker url={url} setUrl={setUrl} />
-              </Grid>
             </Grid>
+            {errors.length > 0 && (
+              <Typography color="error" variant="body2" sx={{ mt: 2 }}>
+                {errors.map((err, idx) => (
+                  <div key={idx}>{err}</div>
+                ))}
+              </Typography>
+            )}
             <Button
               type="submit"
+              fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2, mx: 'auto', display: 'block', width: '50%' }}
+              sx={{ mt: 3, mb: 2 }}
             >
               Inscription
             </Button>
-            <Button
-              onClick={onClose}
-              variant="outlined"
-              sx={{ mt: 1, mb: 2, mx: 'auto', display: 'block', width: '50%' }}
-            >
-              Fermer
-            </Button>
-            <Grid container justifyContent="center">
-              <Grid item>
-                <Button
-                  className="already-have-account"
-                  onClick={toConnexionModal}
-                  sx={{
-                    display: 'block',
-                    textAlign: 'center',
-                    margin: '0 auto',
-                  }}
-                >
-                  Vous avez déja un compte l'immobilière de Julia ? Connectez-vous dès
-                  maintenant !
-                </Button>
-              </Grid>
-            </Grid>
-            {errors.length > 0 && (
-              <Box sx={{ mt: 2 }}>
-                {errors.map((error, index) => (
-                  <Typography key={index} color="error">
-                    {error}
-                  </Typography>
-                ))}
-              </Box>
-            )}
           </Box>
         </Box>
-        <Copyright sx={{ mt: 5 }} />
       </Container>
     </ThemeProvider>
   );
