@@ -16,6 +16,8 @@ import ContactForm from '../../components/ContactsForm/ContactsForm';
 import ChatBot from '../../components/ChatBot/ChatBot';
 import PropertySearchForm from '../../components/PropertySearchForm';
 import Forsale from '../ForSale';
+import AboutPage from '../AboutPage';
+import About from '../AboutPage';
 
 function HomePage() {
   const { t } = useTranslation();
@@ -32,7 +34,7 @@ function HomePage() {
 
   const navigate = useNavigate();
 
-  const getlocation = useCallback(() => {
+  const getLocation = useCallback(() => {
     navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
   }, []);
 
@@ -46,8 +48,6 @@ function HomePage() {
   const errorCallback = useCallback((error: GeolocationPositionError) => {
     console.log('Erreur de géolocalisation :', error);
   }, []);
-
- 
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,7 +67,6 @@ function HomePage() {
     };
   }, []);
 
-
   const handleSearch = () => {
     console.log("Recherche de biens immobiliers lancée");
   };
@@ -75,7 +74,7 @@ function HomePage() {
   return (
     <div className="homepage">
       <CookiePopup data-aos="zoom-in-up" />
-      
+
       <div className="hero-container">
         <img
           className="brittany-sky"
@@ -83,23 +82,13 @@ function HomePage() {
           alt="brittany-sky"
         />
         <PropertySearchForm />
-
       </div>
-      
-      <h1 className="biens-title">Découvrez notre univers</h1>
-      <h2>
-        Forte de son engagement envers ses clients et de sa connaissance approfondie du marché, 
-        <strong>l'Immobilière de Julia</strong> accompagne les particuliers et les professionnels dans leurs projets, 
-        qu'ils soient à la recherche d'une résidence principale, d'une propriété de vacances ou d'investissements locatifs.<br></br> 
-        Avec une approche personnalisée, Armel Moizant et son équipe mettent un point d'honneur à offrir un service de qualité, 
-        basé sur l'écoute, la transparence et la confiance.
-      </h2>
-          
+
       <div className="hero-img-container">
         <ChatBot />
-  
+        <About/>
         <Splitter />
-        <Forsale/>
+        <Forsale />
         <Splitter />
       </div>
     </div>

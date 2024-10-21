@@ -5,9 +5,9 @@ const corsOptions = require('./config/corsOptions');
 const securityHeaders = require('./config/securityHeaders');
 const rateLimiter = require('./config/rateLimiter');
 const authRoutes = require('./routes/authRoutes');
+require('./config/env'); // Charger les variables d'environnement
 
 const app = express();
-require('./config/env');
 
 // Middleware et configurations
 app.use(express.json());
