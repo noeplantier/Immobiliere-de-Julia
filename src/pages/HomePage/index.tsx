@@ -101,7 +101,6 @@ function HomePage() {
         <Splitter />
         <Forsale/>
         <Splitter />
-        <ContactForm/>
       </div>
     </div>
   );

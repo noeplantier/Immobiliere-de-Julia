@@ -20,7 +20,7 @@ function Footer() {
       component="footer"
       sx={{
         width: '100%',
-        height: '40vh',
+        height: '60vh',
         backgroundImage: 'url(https://st.depositphotos.com/2369859/3205/i/450/depositphotos_32055461-stock-photo-abstract-blue-background.jpg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -29,6 +29,7 @@ function Footer() {
         justifyContent: 'left',
         alignItems: 'center',
         mt: 'auto',
+        mb: '0',
         padding: '20px',
         color: 'white',
       }}
