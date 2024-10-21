@@ -12,12 +12,12 @@ import CookiePopup from '../../components/CookiePopup/CookiePopup';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './index.scss';
-import ContactForm from '../../components/ContactsForm/ContactsForm';
 import ChatBot from '../../components/ChatBot/ChatBot';
 import PropertySearchForm from '../../components/PropertySearchForm';
 import Forsale from '../ForSale';
-import AboutPage from '../AboutPage';
+import ValuesPage from '../ValuesPage';
 import About from '../AboutPage';
+import SuccessPage from '../SuccessPage';
 
 function HomePage() {
   const { t } = useTranslation();
@@ -86,7 +86,12 @@ function HomePage() {
 
       <div className="hero-img-container">
         <ChatBot />
+        <Splitter />
         <About/>
+        <Splitter/>
+        <ValuesPage/>
+        <Splitter/>
+        <SuccessPage/>
         <Splitter />
         <Forsale />
         <Splitter />
