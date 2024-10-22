@@ -17,7 +17,7 @@ const Success = () => {
         <p className="story-paragraph">
           Chaque transaction est le fruit d'une collaboration étroite entre nos experts et nos clients. Découvrez les histoires derrière nos plus belles réussites, car chaque projet est bien plus qu'une simple vente.
         </p>
-        <img className="story-image" src="/images/nos-reussites.jpg" alt="Nos Réussites" />
+        <img className="story-image fade-in" src="/src/assets/14.JPG" alt="Nos Réussites" />
       </div>
     </div>
   );

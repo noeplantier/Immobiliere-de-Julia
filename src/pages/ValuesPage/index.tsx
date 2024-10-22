@@ -14,7 +14,7 @@ const Values = () => {
         <p className="story-paragraph">
           Nos agents ne sont pas là pour vendre, mais pour vous conseiller, vous guider et s'assurer que chaque étape de votre parcours immobilier soit une expérience mémorable et positive.
         </p>
-        <img className="story-image" src="/images/nos-valeurs.jpg" alt="Nos Valeurs" />
+        <img className="story-image fade-in" src="/src/assets/1.JPG" alt="Nos Valeurs" />
       </div>
     </div>
   );

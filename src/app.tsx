@@ -15,7 +15,7 @@ import BuyPage from './pages/BuyPage';
 import SalePage from './pages/SalePage';
 import CreateEstimation from './pages/CreateEstmation';
 import Forsale from './pages/ForSale';
-import ContactForm from './components/ContactsForm/ContactsForm';
+import ContactForm from './components/ContactsForm';
 
 function App() {
   const [user, setUser] = useState({});
@@ -45,7 +45,7 @@ function App() {
               <Route
                 path="/user/me"
                 element={
-                  <AuthGuard>
+                  <AuthGuard >
                   </AuthGuard>
                 }
               />

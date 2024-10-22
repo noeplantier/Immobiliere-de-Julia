@@ -1,10 +1,11 @@
 .page-container {
-    text-align: center;
-    background-image: url('https://st.depositphotos.com/2369859/3205/i/450/depositphotos_32055461-stock-photo-abstract-blue-background.jpg');
-    background-size: cover;  
-    color:  #ffffff;   
-     padding: 40px;
-  }
+  text-align: center;
+  background-image: url('https://st.depositphotos.com/2369859/3205/i/450/depositphotos_32055461-stock-photo-abstract-blue-background.jpg');
+  background-size: cover;  
+  color: #ffffff;
+  padding: 40px;
+  overflow: hidden;
+}
   
   .About.hero-container {
     position: relative;
@@ -39,13 +40,11 @@
     text-transform: uppercase;
   }
   
-  .story-paragraph {
-    font-size: 1.2em;
-    line-height: 1.8;
-    color: #333;
-  }
+
   
   .story-image {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
     width: 1200vh;
     height: 80vh;
     object-fit: cover;
@@ -67,3 +66,7 @@
     }
   }
   
+  .appear {
+    opacity: 1;
+    transform: translateY(0);
+  }

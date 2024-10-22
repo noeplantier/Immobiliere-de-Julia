@@ -208,4 +208,18 @@ function RegisterForm({
   );
 }
 
+function Copyright(props: any) {
+  return (
+    <Typography
+      variant="body2"
+      color="text.secondary"
+      align="center"
+      {...props}
+    >
+      {'Copyright © '}L'Immobilière de Julia {new Date().getFullYear()}. Tous droits
+      réservés.
+    </Typography>
+  );
+}
+
 export default RegisterForm;
